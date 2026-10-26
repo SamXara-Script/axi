@@ -308,9 +308,25 @@ function mulberry32(seed) {
   };
 }
 
+// WebGL drawn by the CPU (no usable GPU, or hardware acceleration switched off) takes seconds
+// per full-quality frame, which stalls the whole page.
+function softwareRenderer() {
+  try {
+    const gl = document.createElement('canvas').getContext('webgl2');
+    if (!gl) return false;
+    const info = gl.getExtension('WEBGL_debug_renderer_info');
+    const name = gl.getParameter(info ? info.UNMASKED_RENDERER_WEBGL : gl.RENDERER);
+    gl.getExtension('WEBGL_lose_context')?.loseContext();
+    return /swiftshader|llvmpipe|softpipe|software|basic render/i.test(name || '');
+  } catch {
+    return false;
+  }
+}
+
 // ---------------------------------------------------------------- the scene
 export function createTowers(canvas, { onHover, onSelect, reducedMotion = false } = {}) {
-  const small = matchMedia('(max-width: 820px), (pointer: coarse)').matches;
+  // phones, tablets and software WebGL get the lighter scene: no bloom, smaller shadows and city
+  const small = matchMedia('(max-width: 820px), (pointer: coarse)').matches || softwareRenderer();
   // ?shot keeps the drawing buffer so automated screenshots can read the canvas back
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: !small, powerPreference: 'high-performance', preserveDrawingBuffer: !!window.__AXIS_SHOT || /[?&]shot\b/.test(location.search) });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, small ? 1.5 : 1.75));
@@ -702,6 +718,7 @@ export function createTowers(canvas, { onHover, onSelect, reducedMotion = false 
 
   // ------------------------------------------------------------ loop
   let running = false;
+  let warm = false; // set once the shaders are compiled (see warmUp below)
   let visible = true;
   let lastFrame = performance.now();
 
@@ -723,13 +740,7 @@ export function createTowers(canvas, { onHover, onSelect, reducedMotion = false 
     traffic.material.uniforms.uTime.value = shared.uTime.value;
     stars.material.uniforms.uTime.value = shared.uTime.value;
 
-    if (envDirty && now - lastEnvUpdate > 200) {
-      envTarget?.dispose();
-      envTarget = pmrem.fromScene(envScene, 0.02, 1, 30000);
-      scene.environment = envTarget.texture;
-      envDirty = false;
-      lastEnvUpdate = now;
-    }
+    if (envDirty && now - lastEnvUpdate > 200) updateEnvironment(now);
 
     if (controls) controls.update();
     else heroCamera(now);
@@ -740,8 +751,16 @@ export function createTowers(canvas, { onHover, onSelect, reducedMotion = false 
     else renderer.render(scene, camera);
   }
 
+  function updateEnvironment(now = performance.now()) {
+    envTarget?.dispose();
+    envTarget = pmrem.fromScene(envScene, 0.02, 1, 30000);
+    scene.environment = envTarget.texture;
+    envDirty = false;
+    lastEnvUpdate = now;
+  }
+
   function start() {
-    if (running || !visible) return;
+    if (running || !visible || !warm) return;
     running = true;
     lastFrame = performance.now();
     renderer.setAnimationLoop(frame);
@@ -760,13 +779,47 @@ export function createTowers(canvas, { onHover, onSelect, reducedMotion = false 
   document.addEventListener('visibilitychange', () => (document.hidden ? stop() : visible && start()));
   window.addEventListener('resize', resize);
 
+  // Compiling every shader in one go blocked the page for seconds (the preloader froze on "B4"),
+  // so start-up is split into small steps with a frame in between. Shaders compile in parallel
+  // where the browser supports it; elsewhere each one blocks only for itself.
+  const nextFrame = () => new Promise((resolve) => requestAnimationFrame(() => resolve()));
+  async function warmUp() {
+    try {
+      await nextFrame();
+      // the environment map comes first: materials compiled without it would compile again once it is set
+      updateEnvironment();
+      await nextFrame();
+      const objects = [];
+      scene.traverse((o) => o.material && objects.push(o));
+      let slice = performance.now();
+      for (const object of objects) {
+        await renderer.compileAsync(object, camera, scene);
+        // reading the uniforms waits for this program to link, so the wait happens here, one program at a time
+        for (const material of [object.material].flat()) renderer.properties.get(material).currentProgram?.getUniforms();
+        if (performance.now() - slice > 30) {
+          await nextFrame();
+          slice = performance.now();
+        }
+      }
+      // shadow-map and post-processing shaders are only built by a real render
+      renderer.render(scene, camera);
+      await nextFrame();
+      composer?.render(0);
+      await nextFrame();
+    } catch (err) {
+      console.error(err); // anything not warmed up is simply compiled by the first frames
+    }
+    warm = true;
+    start();
+  }
+
   setDate(new Date());
   resize();
-  renderer.compile(scene, camera);
-  start();
+  const ready = warmUp();
 
   return {
     renderer,
+    ready,
     setDate,
     setScroll(p) {
       state.scroll = p;

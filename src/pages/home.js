@@ -21,8 +21,9 @@ export function initHome({ reduced }) {
 
 function webglAvailable() {
   try {
-    const c = document.createElement('canvas');
-    return !!c.getContext('webgl2');
+    const gl = document.createElement('canvas').getContext('webgl2');
+    gl?.getExtension('WEBGL_lose_context')?.loseContext(); // free the probe context for the real renderer
+    return !!gl;
   } catch {
     return false;
   }
@@ -37,7 +38,7 @@ async function initHero({ reduced }) {
   // never leave the title hidden. The towers' own intro starts whenever both are ready.
   let towers = null;
   let entered = false;
-  const startIntro = () => towers && entered && towers.playIntro(reduced ? 0 : 4.2);
+  const startIntro = () => towers && entered && towers.ready.then(() => towers.playIntro(reduced ? 0 : 4.2));
   if (!reduced) {
     gsap.set($$('.hero__title > span > span', hero), { yPercent: 110 });
     gsap.set($$('[data-hero-fade]', hero), { autoAlpha: 0 });
@@ -64,11 +65,20 @@ async function initHero({ reduced }) {
   }
   const { createTowers } = window.AxisScene;
   const tip = $('.float-tip');
-  towers = createTowers(canvas, {
-    reducedMotion: reduced,
-    onHover: (info, e) => showTip(tip, info, e),
-    onSelect: (info) => explorer.showFloor(info),
-  });
+  // a cached scene.js arrives before the first paint: let the preloader show and start counting first
+  await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  try {
+    towers = createTowers(canvas, {
+      reducedMotion: reduced,
+      onHover: (info, e) => showTip(tip, info, e),
+      onSelect: (info) => explorer.showFloor(info),
+    });
+  } catch (err) {
+    // the renderer can still fail to get a context (GPU busy or blocklisted, too many contexts)
+    console.error(err);
+    hero.classList.add('is-static');
+    return;
+  }
   hero.classList.add('has-3d');
 
   // live Tbilisi light by default
@@ -95,8 +105,8 @@ async function initHero({ reduced }) {
   const explorer = initExplorer(hero, canvas, towers, clock);
   startIntro();
 
-  // compile shaders before the preloader lets go, so the first frame is smooth
-  return new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  // the preloader waits (up to its time limit) for the shaders, so the first frame is smooth
+  return towers.ready;
 }
 
 // ------------------------------------------------------------------ hover tooltip

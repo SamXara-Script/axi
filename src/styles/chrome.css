@@ -417,6 +417,15 @@ html.js .preloader {
 html.is-returning .preloader {
   display: none;
 }
+/* head-script failsafe: the scripts never finished the intro, so show the page as it is */
+html.no-intro .preloader,
+html.no-intro .curtain {
+  display: none;
+}
+/* as specific as the base.css rule that hides the lines until they are split */
+html.js.no-intro [data-reveal='lines'] {
+  visibility: visible;
+}
 .preloader__half {
   position: absolute;
   top: 0;

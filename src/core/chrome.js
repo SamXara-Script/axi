@@ -172,16 +172,28 @@ const FLOOR_SEQUENCE = ['B4', 'B3', 'B2', 'B1', ...Array.from({ length: 37 }, (_
 export function runIntro({ ready, reduced }) {
   const root = document.documentElement;
   const returning = root.classList.contains('is-returning');
+  root.classList.add('is-booted'); // tells the head-script failsafe that the scripts took over
   try {
     sessionStorage.setItem('axis:visited', '1');
   } catch {
     /* storage blocked (sandboxed or private contexts) — the preloader simply shows again */
   }
+  // A feature that fails to start (e.g. no WebGL context) must never hold the page behind the intro.
+  ready = Promise.resolve(ready).catch((err) => console.error(err));
 
   if (returning || reduced) {
     const curtain = $('.curtain');
+    // without motion the preloader is a still of its last frame; a frozen "B4" reads as a hang
+    const pre = $('.preloader');
+    if (pre && !returning) {
+      gsap.set($$('.preloader__word span', pre), { yPercent: 0 });
+      gsap.set($('.preloader__axis', pre), { scaleY: 1 });
+      $('.preloader__floor b', pre).textContent = FLOOR_SEQUENCE.at(-1);
+    }
     return ready.then(() => {
-      if (!curtain) return;
+      // reduced motion on a first visit shows the preloader without its exit animation
+      $('.preloader')?.remove();
+      if (!curtain || !returning) return;
       return gsap
         .to(curtain, { yPercent: -100, duration: reduced ? 0.01 : 0.9, ease: 'expo.inOut', delay: 0.05 })
         .then(() => {

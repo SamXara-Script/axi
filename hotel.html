@@ -17,6 +17,17 @@
         if (theme) d.setAttribute('data-theme', theme);
         if (sessionStorage.getItem('axis:visited')) d.classList.add('is-returning');
       } catch (e) {}
+      // failsafe: uncover the page if the scripts never start the intro (blocked, failed to load,
+      // crashed) or it is somehow still running long after it should have finished
+      var uncover = function () {
+        if (!d.classList.contains('is-ready')) d.classList.add('no-intro');
+      };
+      addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+          if (!d.classList.contains('is-booted')) uncover();
+        }, 500);
+        setTimeout(uncover, 20000);
+      });
     })();
   </script>
 

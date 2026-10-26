@@ -22,36 +22,48 @@ const reduced =
   window.__AXIS_MOTION === 'off';
 const coarse = matchMedia('(pointer: coarse)').matches;
 
-initI18n();
-initScroll({ smooth: !reduced && !coarse });
-initHeader();
-initSettings();
-initPalette();
-registerSiteCommands();
-registerUnitSearch();
-initBooking();
-initCalculators();
-initDrawings(document, { reduced });
-if (!reduced) initCursor();
+// One feature that throws is logged and skipped; it must never stop the rest of the start-up
+// (an uncaught error here used to leave the preloader on "B4" for good).
+const safely = (fn) => {
+  try {
+    return fn();
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+safely(initI18n);
+safely(() => initScroll({ smooth: !reduced && !coarse }));
+safely(initHeader);
+safely(initSettings);
+safely(initPalette);
+safely(registerSiteCommands);
+safely(registerUnitSearch);
+safely(initBooking);
+safely(initCalculators);
+safely(() => initDrawings(document, { reduced }));
+if (!reduced) safely(initCursor);
 
 // Page features may expose a promise (e.g. the 3D scene compiling) that the intro waits for.
-const pageReady = initPage(document.body.dataset.page, { reduced }) || Promise.resolve();
+const pageReady = safely(() => initPage(document.body.dataset.page, { reduced }));
 
 const fontsReady = document.fonts ? document.fonts.ready.catch(() => {}) : Promise.resolve();
 const ready = Promise.race([Promise.all([fontsReady, pageReady]), new Promise((r) => setTimeout(r, 4500))]);
-const introDone = runIntro({ ready, reduced });
+// if the intro itself fails, the page is simply uncovered once it is ready
+const introDone =
+  safely(() => runIntro({ ready, reduced })) || ready.then(() => document.documentElement.classList.add('no-intro'));
 
-initMotion({ reduced, gate: introDone });
-initElevator();
-initTransitions({ reduced });
+safely(() => initMotion({ reduced, gate: introDone }));
+safely(initElevator);
+safely(() => initTransitions({ reduced }));
 
 introDone.then(() => {
   document.documentElement.classList.add('is-ready');
   document.dispatchEvent(new CustomEvent('axis:ready'));
   ScrollTrigger.refresh();
-  // deep link to a section (#location) after the intro
+  // deep link to a section (#location) after the intro; ids like "#24B" are not valid selectors
   if (location.hash.length > 1 && !location.hash.includes('=')) {
-    const target = document.querySelector(location.hash);
+    const target = safely(() => document.getElementById(decodeURIComponent(location.hash.slice(1))));
     if (target) setTimeout(() => target.scrollIntoView(), 50);
   }
 });
