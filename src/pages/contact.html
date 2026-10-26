@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--#include head-->
+  <title>{{t:meta.contact.title}}</title>
+  <meta name="i18n-title" content="meta.contact.title">
+  <meta name="description" content="{{t:meta.contact.description}}">
+</head>
+<body data-page="{{page}}">
+<!--#include header-->
+
+<main id="main">
+  <section class="page-hero" id="top" data-floor="01" data-floor-label="floors.overview">
+    <div class="container">
+      <p class="eyebrow" data-i18n="contactPage.eyebrow">{{t:contactPage.eyebrow}}</p>
+      <h1 class="display page-hero__display" data-reveal="lines" data-i18n="contactPage.title">{{t:contactPage.title}}</h1>
+      <p class="lead page-hero__lead" data-reveal="fade" data-i18n="contactPage.lead">{{t:contactPage.lead}}</p>
+    </div>
+  </section>
+
+  <section class="section section--tight" id="contacts" data-floor="02" data-floor-label="floors.contact">
+    <div class="container">
+      <div class="contact-grid" data-reveal="stagger">
+        <div class="contact-card">
+          <p class="label" data-i18n="contactPage.phone">{{t:contactPage.phone}}</p>
+          <a class="contact-card__value" href="tel:+995322371717">+995 32 237 17 17</a>
+          <button type="button" class="link" data-copy="+995 32 237 17 17" data-i18n="contactPage.copy">{{t:contactPage.copy}}</button>
+        </div>
+        <div class="contact-card">
+          <p class="label" data-i18n="contactPage.short">{{t:contactPage.short}}</p>
+          <a class="contact-card__value" href="tel:*1717">*1717</a>
+        </div>
+        <div class="contact-card">
+          <p class="label" data-i18n="contactPage.whatsapp">{{t:contactPage.whatsapp}}</p>
+          <a class="contact-card__value" href="https://wa.me/995322371717" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <div class="contact-card">
+          <p class="label" data-i18n="contactPage.email">{{t:contactPage.email}}</p>
+          <a class="contact-card__value" href="mailto:info@axistowers.ge">info@axistowers.ge</a>
+          <button type="button" class="link" data-copy="info@axistowers.ge" data-i18n="contactPage.copy">{{t:contactPage.copy}}</button>
+        </div>
+        <div class="contact-card">
+          <p class="label" data-i18n="contactPage.sales">{{t:contactPage.sales}}</p>
+          <a class="contact-card__value" href="mailto:sales@axistowers.ge">sales@axistowers.ge</a>
+          <button type="button" class="link" data-copy="sales@axistowers.ge" data-i18n="contactPage.copy">{{t:contactPage.copy}}</button>
+        </div>
+        <div class="contact-card">
+          <p class="label" data-i18n="contactPage.address">{{t:contactPage.address}}</p>
+          <p class="contact-card__value contact-card__value--small" data-i18n="contact.addressLine">{{t:contact.addressLine}}</p>
+          <button type="button" class="link" data-copy="37m Ilia Chavchavadze Ave, Tbilisi 0179, Georgia" data-i18n="contactPage.copy">{{t:contactPage.copy}}</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="book" data-floor="03" data-floor-label="floors.contact">
+    <div class="container sunband__grid">
+      <div>
+        <p class="eyebrow" data-i18n="booking.eyebrow">{{t:booking.eyebrow}}</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="contactPage.bookTitle">{{t:contactPage.bookTitle}}</h2>
+      </div>
+      <div class="stack" style="--stack:26px">
+        <p class="lead" data-i18n="contactPage.bookLead">{{t:contactPage.bookLead}}</p>
+        <div class="row" style="--gap:12px">
+          <button class="btn btn--primary btn--lg" type="button" data-book data-magnetic="0.2" data-i18n="contactPage.bookCta">{{t:contactPage.bookCta}}</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="map" data-floor="04" data-floor-label="floors.map">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.loc.eyebrow">{{t:home.loc.eyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="contactPage.mapTitle">{{t:contactPage.mapTitle}}</h2>
+        </div>
+        <div class="section-head__aside">
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=41.7118,44.7568" target="_blank" rel="noopener"><span data-i18n="contactPage.open">{{t:contactPage.open}}</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 3h8v8M13 3L3 13"/></svg></a>
+        </div>
+      </div>
+      <div class="location__map location__map--wide">
+        <div class="map" data-map></div>
+        <div class="map__card">
+          <p class="label">Axis Towers</p>
+          <p data-i18n="contact.addressLine">{{t:contact.addressLine}}</p>
+          <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=41.7118,44.7568" target="_blank" rel="noopener"><span data-i18n="home.loc.directions">{{t:home.loc.directions}}</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--#include footer-->
+</body>
+</html>

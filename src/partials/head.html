@@ -1,0 +1,18 @@
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>
+    // before first paint: JS flag, saved theme, and whether this is a page-to-page visit
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var theme = JSON.parse(localStorage.getItem('axis:theme'));
+        if (theme) d.setAttribute('data-theme', theme);
+        if (sessionStorage.getItem('axis:visited')) d.classList.add('is-returning');
+      } catch (e) {}
+    })();
+  </script>

@@ -1,0 +1,19 @@
+{
+  "name": "axis-towers-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Concept redesign of axistowers.ge — trilingual static site with a live 3D model of the towers.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --watch",
+    "serve": "npx --yes serve ."
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "gsap": "^3.15.0",
+    "leaflet": "^1.9.4",
+    "lenis": "^1.3.27",
+    "three": "^0.186.1"
+  }
+}

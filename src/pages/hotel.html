@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--#include head-->
+  <title>{{t:meta.hotel.title}}</title>
+  <meta name="i18n-title" content="meta.hotel.title">
+  <meta name="description" content="{{t:meta.hotel.description}}">
+</head>
+<body data-page="{{page}}">
+<!--#include header-->
+
+<main id="main">
+  <section class="page-hero page-hero--night" id="top" data-floor="01" data-floor-label="floors.overview">
+    <div class="container page-hero__grid">
+      <div class="page-hero__text">
+        <p class="eyebrow" data-i18n="hotel.eyebrow">{{t:hotel.eyebrow}}</p>
+        <h1 class="h1" data-reveal="lines" data-i18n="hotel.title">{{t:hotel.title}}</h1>
+        <p class="lead" data-reveal="fade" data-i18n="hotel.lead">{{t:hotel.lead}}</p>
+        <div class="row" data-reveal="fade" style="--gap:12px">
+          <a class="btn btn--primary" href="https://pullmantbilisi.com/" target="_blank" rel="noopener"><span data-i18n="hotel.bookStay">{{t:hotel.bookStay}}</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 3h8v8M13 3L3 13"/></svg></a>
+          <a class="btn" href="#dining" data-i18n="explorer.ctaDining">{{t:explorer.ctaDining}}</a>
+        </div>
+        <dl class="page-hero__meta" data-reveal="stagger">
+          <div><dt data-i18n="hotel.m1">{{t:hotel.m1}}</dt><dd>218</dd></div>
+          <div><dt data-i18n="hotel.m2">{{t:hotel.m2}}</dt><dd>19–35</dd></div>
+          <div><dt data-i18n="hotel.m3">{{t:hotel.m3}}</dt><dd>36</dd></div>
+          <div><dt data-i18n="hotel.m4">{{t:hotel.m4}}</dt><dd>37</dd></div>
+        </dl>
+      </div>
+      <div class="page-hero__art" aria-hidden="true"><svg data-drawing="glass" data-highlight="hotel,dining"></svg></div>
+    </div>
+  </section>
+
+  <section class="section" id="rooms" data-floor="02" data-floor-label="floors.rooms">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="hotel.roomsEyebrow">{{t:hotel.roomsEyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="hotel.roomsTitle">{{t:hotel.roomsTitle}}</h2>
+        </div>
+      </div>
+      <div class="room-cards" data-reveal="stagger">
+        <article class="room-card"><span class="room-card__n">I</span><h3 class="h3" data-i18n="hotel.r1">{{t:hotel.r1}}</h3><p class="muted" data-i18n="hotel.r1d">{{t:hotel.r1d}}</p></article>
+        <article class="room-card"><span class="room-card__n">II</span><h3 class="h3" data-i18n="hotel.r2">{{t:hotel.r2}}</h3><p class="muted" data-i18n="hotel.r2d">{{t:hotel.r2d}}</p></article>
+        <article class="room-card"><span class="room-card__n">III</span><h3 class="h3" data-i18n="hotel.r3">{{t:hotel.r3}}</h3><p class="muted" data-i18n="hotel.r3d">{{t:hotel.r3d}}</p></article>
+        <article class="room-card"><span class="room-card__n">IV</span><h3 class="h3" data-i18n="hotel.r4">{{t:hotel.r4}}</h3><p class="muted" data-i18n="hotel.r4d">{{t:hotel.r4d}}</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="dining" data-floor="03" data-floor-label="floors.dining">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="hotel.diningEyebrow">{{t:hotel.diningEyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="hotel.diningTitle">{{t:hotel.diningTitle}}</h2>
+        </div>
+      </div>
+      <div class="venues">
+        <article class="venue venue--sky" data-reveal="fade">
+          <span class="venue__floor">37</span>
+          <div class="venue__body">
+            <p class="label" data-i18n="home.hotel.t37">{{t:home.hotel.t37}}</p>
+            <h3 class="h2">Weather Report</h3>
+            <p class="lead" data-i18n="hotel.weatherLead">{{t:hotel.weatherLead}}</p>
+          </div>
+        </article>
+        <article class="venue" data-reveal="fade">
+          <span class="venue__floor">36</span>
+          <div class="venue__body">
+            <p class="label" data-i18n="home.hotel.t36">{{t:home.hotel.t36}}</p>
+            <h3 class="h2">Dumas</h3>
+            <p class="lead" data-i18n="hotel.dumasLead">{{t:hotel.dumasLead}}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="wellness" data-floor="04" data-floor-label="floors.wellness">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="hotel.wellEyebrow">{{t:hotel.wellEyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="hotel.wellTitle">{{t:hotel.wellTitle}}</h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="hotel.wellLead">{{t:hotel.wellLead}}</p></div>
+      </div>
+      <div class="feature-cards" data-reveal="stagger">
+        <article class="feature-card feature-card--pool"><span class="feature-card__num">25 m</span><h3 class="h4" data-i18n="hotel.w1">{{t:hotel.w1}}</h3><p class="muted" data-i18n="hotel.w1d">{{t:hotel.w1d}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">SPA</span><h3 class="h4" data-i18n="hotel.w2">{{t:hotel.w2}}</h3><p class="muted" data-i18n="hotel.w2d">{{t:hotel.w2d}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">°C</span><h3 class="h4" data-i18n="hotel.w3">{{t:hotel.w3}}</h3><p class="muted" data-i18n="hotel.w3d">{{t:hotel.w3d}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">GYM</span><h3 class="h4" data-i18n="hotel.w4">{{t:hotel.w4}}</h3><p class="muted" data-i18n="hotel.w4d">{{t:hotel.w4d}}</p></article>
+      </div>
+      <p class="small faint" style="margin-top:32px" data-i18n="hotel.note">{{t:hotel.note}}</p>
+    </div>
+  </section>
+</main>
+
+<!--#include footer-->
+</body>
+</html>

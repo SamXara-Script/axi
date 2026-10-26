@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>
+    // before first paint: JS flag, saved theme, and whether this is a page-to-page visit
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var theme = JSON.parse(localStorage.getItem('axis:theme'));
+        if (theme) d.setAttribute('data-theme', theme);
+        if (sessionStorage.getItem('axis:visited')) d.classList.add('is-returning');
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>Axis Towers — Two towers, one axis · Tbilisi</title>
+  <meta name="i18n-title" content="meta.home.title">
+  <meta name="description" content="Axis Towers in Vake, Tbilisi: 147 m twin towers with residences, a Class A business center, the Pullman hotel, the Weather Report sky bar and the Falestra dining street.">
+</head>
+<body data-page="index">
+  <a class="skip-link" href="#main" data-i18n="chrome.skip">Skip to content</a>
+  <div class="guides" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html" data-i18n-attr="aria-label:chrome.homeLabel" aria-label="Axis Towers — home">
+        <svg class="logo__mark" viewBox="0 0 44 44" aria-hidden="true"><path d="M8.5 41C10.5 28 12.5 15 11 3h7.5c1.1 12 .1 25-2 38z" fill="currentColor"/><path d="M35.5 41c-2-13-4-26-2.5-38h-7.5c-1.1 12-.1 25 2 38z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M22 0v44" stroke="var(--accent)" stroke-width="1"/></svg>
+        <span class="logo__word"><b>AXIS</b><span>TOWERS</span></span>
+      </a>
+      <nav class="nav" data-i18n-attr="aria-label:chrome.primaryNav" aria-label="Primary">
+        <a href="residences.html" data-i18n="nav.residences">Residences</a>
+        <a href="offices.html" data-i18n="nav.offices">Business Center</a>
+        <a href="hotel.html" data-i18n="nav.hotel">Hotel & Sky Bar</a>
+        <a href="lifestyle.html" data-i18n="nav.lifestyle">Lifestyle</a>
+        <a href="about.html" data-i18n="nav.about">The Towers</a>
+        <a href="news.html" data-i18n="nav.news">News</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="header__tools">
+        <div class="clock" data-clock aria-hidden="true"></div>
+        <div class="lang-switch" role="group" data-i18n-attr="aria-label:chrome.language" aria-label="Language">
+          <button type="button" data-lang="ka" lang="ka" aria-pressed="false">ქარ</button>
+          <button type="button" data-lang="en" lang="en" aria-pressed="true">Eng</button>
+          <button type="button" data-lang="ru" lang="ru" aria-pressed="false">Рус</button>
+        </div>
+        <button class="search-trigger" type="button" data-palette data-i18n-attr="aria-label:chrome.search" aria-label="Search">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>
+          <span data-i18n="chrome.search">Search</span><kbd>⌘K</kbd>
+        </button>
+        <button class="btn btn--primary btn--sm btn-book" type="button" data-book data-magnetic="0.25" data-i18n="chrome.book">Book a viewing</button>
+        <button class="burger" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu" data-i18n-attr="aria-label:chrome.menu" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" id="menu">
+    <nav class="menu__links" data-i18n-attr="aria-label:chrome.menu" aria-label="Menu">
+      <a href="index.html" data-preview="00"><small>00</small><span data-i18n="nav.home">Home</span></a>
+      <a href="residences.html" data-preview="04–37"><small>04</small><span data-i18n="nav.residences">Residences</span></a>
+      <a href="offices.html" data-preview="04–18"><small>12</small><span data-i18n="nav.offices">Business Center</span></a>
+      <a href="hotel.html" data-preview="19–37"><small>19</small><span data-i18n="nav.hotel">Hotel & Sky Bar</span></a>
+      <a href="lifestyle.html" data-preview="−1"><small>−1</small><span data-i18n="nav.lifestyle">Lifestyle</span></a>
+      <a href="about.html" data-preview="147"><small>147</small><span data-i18n="nav.about">The Towers</span></a>
+      <a href="news.html" data-preview="2026"><small>NEWS</small><span data-i18n="nav.news">News</span></a>
+      <a href="contact.html" data-preview="37M"><small>37M</small><span data-i18n="nav.contact">Contact</span></a>
+    </nav>
+    <aside class="menu__aside">
+      <div class="menu__preview" aria-hidden="true"><span data-menu-preview>00</span></div>
+      <div class="menu__contact">
+        <p class="label" data-i18n="footer.visit">Visit</p>
+        <p data-i18n="contact.addressLine">37m Ilia Chavchavadze Ave, Tbilisi 0179</p>
+        <a href="tel:+995322371717">+995 32 237 17 17</a>
+        <a href="mailto:info@axistowers.ge">info@axistowers.ge</a>
+      </div>
+      <div class="row">
+        <div class="lang-switch" role="group" data-i18n-attr="aria-label:chrome.language" aria-label="Language">
+          <button type="button" data-lang="ka" lang="ka" aria-pressed="false">ქართული</button>
+          <button type="button" data-lang="en" lang="en" aria-pressed="true">English</button>
+          <button type="button" data-lang="ru" lang="ru" aria-pressed="false">Русский</button>
+        </div>
+        <button class="btn btn--primary btn--sm" type="button" data-book data-i18n="chrome.book">Book a viewing</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__half preloader__half--l"></div>
+    <div class="preloader__half preloader__half--r"></div>
+    <div class="preloader__axis"></div>
+    <div class="preloader__content">
+      <div class="preloader__word"><span>A</span><span>X</span><span>I</span><span>S</span></div>
+    </div>
+    <div class="preloader__meta">
+      <span>41.7118° N<br>44.7568° E</span>
+      <span class="preloader__floor"><small>FL</small><b>B4</b></span>
+      <span>147 M<br>TBILISI</span>
+    </div>
+  </div>
+  <div class="curtain" aria-hidden="true"><div class="curtain__label">Axis Towers</div></div>
+  <div class="float-tip" aria-hidden="true"></div>
+
+
+<main id="main">
+  <!-- 00 · Lobby — live 3D towers -->
+  <section class="hero" id="top" data-hero data-floor="00" data-floor-label="floors.lobby">
+    <div class="hero__stage"><canvas class="hero__canvas" data-towers aria-label="Interactive 3D model of Axis Towers" data-i18n-attr="aria-label:home.hero.canvasLabel" role="img"></canvas></div>
+    <svg class="hero__fallback" data-drawing="both" aria-hidden="true"></svg>
+    <div class="hero__shade" aria-hidden="true"></div>
+
+    <div class="container hero__content">
+      <p class="eyebrow" data-hero-fade data-i18n="home.hero.eyebrow">Vake · Tbilisi · 41.71° N</p>
+      <h1 class="hero__title">
+        <span><span>Axis</span></span>
+        <span><span>Towers</span></span>
+      </h1>
+      <div class="hero__intro">
+        <p class="lead" data-hero-fade data-i18n="home.hero.lead">Two towers turning around one axis. 147 metres of residences, Class A offices, the Pullman hotel and the highest bar in Tbilisi — on Ilia Chavchavadze Avenue.</p>
+        <div class="row" data-hero-fade style="--gap:12px">
+          <button class="btn btn--primary" type="button" data-explore data-magnetic="0.2">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 1.5l5.5 3v7L8 14.5l-5.5-3v-7z"/><path d="M2.5 4.5L8 7.5l5.5-3M8 7.5v7"/></svg>
+            <span data-i18n="home.hero.explore">Explore in 3D</span>
+          </button>
+          <a class="btn" href="residences.html" data-magnetic="0.2"><span data-i18n="home.hero.find">Find a residence</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__bar container" data-hero-fade>
+      <dl class="hero__facts">
+        <div><dt data-i18n="home.hero.factHeight">Height</dt><dd>147 <small data-i18n="units.m">m</small></dd></div>
+        <div><dt data-i18n="home.hero.factFloors">Floors</dt><dd>37 <small>+4</small></dd></div>
+        <div><dt data-i18n="home.hero.factTwist">Twist</dt><dd>2° <small data-i18n="home.hero.perFloor">per floor</small></dd></div>
+      </dl>
+      <div class="hero__light">
+        <span class="label"><span data-i18n="home.hero.light">Light in Tbilisi</span> · <span data-live-time>--:--</span></span>
+        <div class="segmented" role="group" data-i18n-attr="aria-label:home.hero.light" aria-label="Light in Tbilisi">
+          <button type="button" data-preset="live" aria-pressed="true" data-i18n="home.hero.live">Live</button>
+          <button type="button" data-preset="sunrise" aria-pressed="false" data-i18n="home.hero.sunrise">Sunrise</button>
+          <button type="button" data-preset="day" aria-pressed="false" data-i18n="home.hero.day">Day</button>
+          <button type="button" data-preset="sunset" aria-pressed="false" data-i18n="home.hero.sunset">Sunset</button>
+          <button type="button" data-preset="night" aria-pressed="false" data-i18n="home.hero.night">Night</button>
+        </div>
+      </div>
+      <a class="hero__scroll" href="#intro"><span data-i18n="home.hero.scroll">Scroll</span><i></i></a>
+    </div>
+  </section>
+
+  <!-- 01 · Intro -->
+  <section class="section intro" id="intro" data-floor="01" data-floor-label="floors.intro">
+    <div class="container">
+      <p class="eyebrow" data-i18n="home.intro.eyebrow">The tallest address in Tbilisi</p>
+      <p class="intro__text" data-scrub-text data-i18n="home.intro.text">Rising more than 147 metres above Vake, Axis Towers is the tallest building in the capital — one tower in white stone, one in dark glass, each floor turning two degrees around its core, in opposite directions.</p>
+      <div class="intro__foot">
+        <p class="muted" data-i18n="home.intro.note">A landmark of Georgian architecture and engineering — and, since 2020, the first building in the region with World Trade Center status.</p>
+        <a class="link" href="about.html"><span data-i18n="home.intro.link">The story of the towers</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · Numbers -->
+  <section class="section section--tight" id="numbers" data-floor="02" data-floor-label="floors.numbers">
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><p class="stat__value"><span data-count="147">147</span><small data-i18n="units.m">m</small></p><p class="stat__label" data-i18n="home.numbers.height">metres high — the tallest building in Tbilisi</p></div>
+        <div class="stat"><p class="stat__value"><span data-count="41">41</span></p><p class="stat__label" data-i18n="home.numbers.floors">floors: 37 above ground and 4 below</p></div>
+        <div class="stat"><p class="stat__value"><span data-count="218">218</span></p><p class="stat__label" data-i18n="home.numbers.rooms">rooms and suites at Pullman Tbilisi Axis Towers</p></div>
+        <div class="stat"><p class="stat__value"><span data-count="17000">17,000</span><small data-i18n="units.m2">m²</small></p><p class="stat__label" data-i18n="home.numbers.office">of Class A business space</p></div>
+        <div class="stat"><p class="stat__value"><span data-count="2500">2,500</span><small data-i18n="units.m2">m²</small></p><p class="stat__label" data-i18n="home.numbers.courtyard">landscaped courtyard with sports and recreation areas</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · Two towers -->
+  <section class="section duo" id="towers" data-floor="03" data-floor-label="floors.towers">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.duo.eyebrow">Stone & glass</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="home.duo.title">Two towers. <em>One axis.</em></h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="home.duo.lead">They share a foundation and a podium, then twist away from each other as they rise — a white stone tower for living, a dark glass tower for business and hospitality.</p></div>
+      </div>
+      <div class="duo__grid">
+        <a class="duo__card duo__card--stone" href="residences.html" data-cursor="Open" data-cursor-i18n="common.open">
+          <svg class="duo__drawing" data-drawing="stone" data-highlight="residential"></svg>
+          <div class="duo__text">
+            <p class="label" data-i18n="towers.stone.floors">Floors 4–37 · Residences</p>
+            <h3 class="h2" data-i18n="towers.stone.name">The Stone Tower</h3>
+            <p class="muted" data-i18n="home.duo.stone">Residences from the 4th to the 37th floor, with panoramic glazing, generous ceiling heights and light from every side.</p>
+            <ul class="duo__uses"><li style="--dot:var(--z-residential)" data-i18n="zones.residential">Residences</li><li style="--dot:var(--z-retail)" data-i18n="zones.retail">Lobbies & retail</li></ul>
+          </div>
+        </a>
+        <a class="duo__card duo__card--glass" href="offices.html" data-cursor="Open" data-cursor-i18n="common.open">
+          <svg class="duo__drawing" data-drawing="glass" data-highlight="office,hotel,dining"></svg>
+          <div class="duo__text">
+            <p class="label" data-i18n="towers.glass.floors">Floors 4–37 · Business · Hotel · Sky bar</p>
+            <h3 class="h2" data-i18n="towers.glass.name">The Glass Tower</h3>
+            <p class="muted" data-i18n="home.duo.glass">A Class A business center, the 218-room Pullman hotel, the Dumas restaurant on 36 and the Weather Report sky bar on 37.</p>
+            <ul class="duo__uses"><li style="--dot:var(--z-office)" data-i18n="zones.office">Business Center</li><li style="--dot:var(--z-hotel)" data-i18n="zones.hotel">Pullman hotel</li><li style="--dot:var(--z-dining)" data-i18n="zones.dining">Restaurant & sky bar</li></ul>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · Inside: stacking plan -->
+  <section class="section section--alt" id="inside" data-floor="04" data-floor-label="floors.inside">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.inside.eyebrow">Floor by floor</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="home.inside.title">Inside the <em>towers</em></h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="home.inside.lead">Every floor of both towers, colour-coded by use. Hover or tap a floor — or focus the plan and use the arrow keys — to see what is there.</p></div>
+      </div>
+      <div class="stacking" data-stacking>
+        <div class="stacking__filters" role="group" data-i18n-attr="aria-label:stacking.filter" aria-label="Filter by use"></div>
+        <div class="stacking__body">
+          <div class="stacking__plot"></div>
+          <div class="stacking__info" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · Residences -->
+  <section class="section feature" id="residences" data-floor="05" data-floor-label="floors.residences">
+    <div class="container feature__grid">
+      <div class="feature__media" data-reveal="image">
+        <div class="art art--stone" aria-hidden="true"><svg data-drawing="stone" data-highlight="residential"></svg><span class="art__num">04–37</span></div>
+      </div>
+      <div class="feature__text">
+        <p class="eyebrow"><b>04–37</b> <span data-i18n="home.res.eyebrow">Residences</span></p>
+        <h2 class="h1" data-reveal="lines" data-i18n="home.res.title">Living in the <em>Stone Tower</em></h2>
+        <p class="lead" data-i18n="home.res.lead">High ceilings and panoramic glazing make every apartment exceptionally bright, with views that open up across the city.</p>
+        <ul class="ticks" data-reveal="stagger">
+          <li data-i18n="home.res.p1">Panoramic windows and generous ceiling heights</li>
+          <li data-i18n="home.res.p2">Central heating and cooling</li>
+          <li data-i18n="home.res.p3">A 2,500 m² landscaped courtyard with sports and recreation areas</li>
+          <li data-i18n="home.res.p4">Spa, pool, fitness, restaurants and shopping in the same building</li>
+        </ul>
+        <div class="row" style="--gap:12px">
+          <a class="btn btn--primary" href="residences.html#finder" data-i18n="home.res.cta">Find your apartment</a>
+          <a class="btn" href="residences.html#calculator" data-i18n="home.res.cta2">Payment calculator</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · Business centre + WTC -->
+  <section class="section feature feature--flip" id="business" data-floor="06" data-floor-label="floors.business">
+    <div class="container feature__grid">
+      <div class="feature__media" data-reveal="image">
+        <div class="art art--glass" aria-hidden="true"><svg data-drawing="glass" data-highlight="office"></svg><span class="art__num">04–18</span></div>
+      </div>
+      <div class="feature__text">
+        <p class="eyebrow"><b>WTC</b> <span data-i18n="home.biz.eyebrow">Business Center</span></p>
+        <h2 class="h1" data-reveal="lines" data-i18n="home.biz.title">Class A, <em>world-connected</em></h2>
+        <p class="lead" data-i18n="home.biz.lead">17,000 m² of flexible office space in the Glass Tower, served by a concierge and 24-hour security — in the first building in the region with World Trade Center status.</p>
+        <dl class="mini-stats">
+          <div><dt data-i18n="home.biz.s1">Business space</dt><dd><span data-num="17000">17,000</span> <span data-i18n="units.m2">m²</span></dd></div>
+          <div><dt data-i18n="home.biz.s2">Business lobby</dt><dd><span data-num="700">700</span> <span data-i18n="units.m2">m²</span></dd></div>
+          <div><dt data-i18n="home.biz.s3">Meeting rooms</dt><dd>7</dd></div>
+        </dl>
+        <div class="row" style="--gap:12px">
+          <a class="btn btn--primary" href="offices.html#finder" data-i18n="home.biz.cta">Available offices</a>
+          <a class="btn" href="offices.html#wtc" data-i18n="home.biz.cta2">About WTC Tbilisi</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 · Hotel, Dumas, Weather Report -->
+  <section class="section section--alt sky" id="hotel" data-floor="07" data-floor-label="floors.hotel">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.hotel.eyebrow">Floors 19–37</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="home.hotel.title">Stay, dine, <em>look down on the city</em></h2>
+        </div>
+        <div class="section-head__aside">
+          <p class="lead" data-i18n="home.hotel.lead">Pullman Tbilisi Axis Towers — the first premium Accor hotel in Georgia — fills the upper floors of the Glass Tower, crowned by a French restaurant and the highest bar in Tbilisi.</p>
+          <a class="link" href="hotel.html"><span data-i18n="home.hotel.link">Hotel, restaurant & sky bar</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+      <ol class="levels" data-reveal="stagger">
+        <li class="level" style="--zc:var(--z-dining)">
+          <span class="level__floor">37</span>
+          <div><h3 class="h3">Weather Report</h3><p class="muted" data-i18n="home.hotel.l37">The highest bar in Tbilisi: cocktails, sushi and tapas, with DJs at the weekend.</p></div>
+          <span class="level__tag" data-i18n="home.hotel.t37">Sky bar</span>
+        </li>
+        <li class="level" style="--zc:var(--z-dining)">
+          <span class="level__floor">36</span>
+          <div><h3 class="h3">Dumas</h3><p class="muted" data-i18n="home.hotel.l36">French and Mediterranean cooking from breakfast to dinner, named after Alexandre Dumas.</p></div>
+          <span class="level__tag" data-i18n="home.hotel.t36">Restaurant</span>
+        </li>
+        <li class="level" style="--zc:var(--z-hotel)">
+          <span class="level__floor">19–35</span>
+          <div><h3 class="h3">Pullman Tbilisi Axis Towers</h3><p class="muted" data-i18n="home.hotel.l19">218 rooms and suites — Superior, Executive, Junior Suite and Superior Suite.</p></div>
+          <span class="level__tag" data-i18n="home.hotel.t19">Hotel</span>
+        </li>
+        <li class="level" style="--zc:var(--z-retail)">
+          <span class="level__floor" data-i18n="home.hotel.podium">Podium</span>
+          <div><h3 class="h3" data-i18n="home.hotel.poolTitle">A pool under a retractable roof</h3><p class="muted" data-i18n="home.hotel.pool">A 25-metre pool on the podium roof, with a spa, sauna, steam room and gym.</p></div>
+          <span class="level__tag">25 × 9 <span data-i18n="units.m">m</span></span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 08 · Lifestyle -->
+  <section class="section" id="lifestyle" data-floor="08" data-floor-label="floors.lifestyle">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.life.eyebrow">Lifestyle</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="home.life.title">A city <em>within the building</em></h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="home.life.lead">Restaurants, shopping and wellness are part of the address — for residents, tenants, hotel guests and the whole of Vake.</p></div>
+      </div>
+      <div class="cards3" data-reveal="stagger">
+        <a class="tile-card" href="lifestyle.html#falestra">
+          <span class="tile-card__floor">G</span>
+          <h3 class="h3">Falestra</h3>
+          <p class="muted" data-i18n="home.life.falestra">A gastronomic street of lounges, bars and restaurants, indoors and out — and a venue for large events.</p>
+          <span class="tile-card__more" data-i18n="common.discover">Discover</span>
+        </a>
+        <a class="tile-card" href="lifestyle.html#shopping">
+          <span class="tile-card__floor">−1</span>
+          <h3 class="h3" data-i18n="home.life.shopTitle">Shopping center</h3>
+          <p class="muted" data-i18n="home.life.shop">On level −1: everyday shops and services, a 24-hour agro-hub and cafés, with direct access from the underground car park.</p>
+          <span class="tile-card__more" data-i18n="common.discover">Discover</span>
+        </a>
+        <a class="tile-card" href="lifestyle.html#wellness">
+          <span class="tile-card__floor">SPA</span>
+          <h3 class="h3" data-i18n="home.life.spaTitle">Spa, pool & gym</h3>
+          <p class="muted" data-i18n="home.life.spa">Individually tailored treatments, a 25 m pool, sauna, steam room and a fitness hall.</p>
+          <span class="tile-card__more" data-i18n="common.discover">Discover</span>
+        </a>
+      </div>
+    </div>
+    <div class="marquee" data-marquee="38" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Residences <svg viewBox="0 0 20 20"><path d="M10 0v20M0 10h20" stroke="currentColor"/></svg> <em>Business</em> <svg viewBox="0 0 20 20"><path d="M10 0v20M0 10h20" stroke="currentColor"/></svg> Pullman <svg viewBox="0 0 20 20"><path d="M10 0v20M0 10h20" stroke="currentColor"/></svg> <em>Sky bar</em> <svg viewBox="0 0 20 20"><path d="M10 0v20M0 10h20" stroke="currentColor"/></svg> Falestra <svg viewBox="0 0 20 20"><path d="M10 0v20M0 10h20" stroke="currentColor"/></svg> <em>Wellness</em> <svg viewBox="0 0 20 20"><path d="M10 0v20M0 10h20" stroke="currentColor"/></svg></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 · Sunlight study / 3D explorer -->
+  <section class="section section--alt sunband" id="sunlight" data-floor="09" data-floor-label="floors.sunlight">
+    <div class="container sunband__grid">
+      <div>
+        <p class="eyebrow" data-i18n="home.sun.eyebrow">Sunlight study</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="home.sun.title">Watch the light <em>move</em></h2>
+      </div>
+      <div class="stack">
+        <p class="lead" data-i18n="home.sun.lead">Step inside the live 3D model, choose any day of the year and any hour, and see how the Tbilisi sun falls across both towers — calculated for the real latitude and longitude.</p>
+        <ul class="ticks">
+          <li data-i18n="home.sun.p1">True solar position for 41.71° N, 44.76° E</li>
+          <li data-i18n="home.sun.p2">Sunrise, sunset and hours of daylight for every date</li>
+          <li data-i18n="home.sun.p3">Colour the floors by use and select any floor for details</li>
+        </ul>
+        <button class="btn btn--primary btn--lg" type="button" data-explore data-magnetic="0.2">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M3 13l1.4-1.4M11.6 4.4L13 3"/></svg>
+          <span data-i18n="home.sun.cta">Open the 3D explorer</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · View from your floor -->
+  <section class="section viewsim" id="view" data-viewsim data-time="day" data-floor="10" data-floor-label="floors.view">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.view.eyebrow">The view</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="home.view.title">Rise <em>above</em> the city</h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="home.view.lead">Drag the slider to change floors and watch Tbilisi open up — from the rooftops of Vake to the ridge of Mtatsminda.</p></div>
+      </div>
+    </div>
+    <div class="viewsim__stage">
+      <div class="viewsim__marks">
+        <span data-min-floor="8" style="left:68%;top:38%" data-i18n="home.view.tv">Mtatsminda TV tower</span>
+        <span data-min-floor="18" style="left:80%;top:56%" data-i18n="home.view.old">Old Tbilisi</span>
+        <span data-min-floor="28" style="left:14%;top:30%" data-i18n="home.view.caucasus">Caucasus range, on clear days</span>
+      </div>
+      <div class="viewsim__hud container">
+        <div class="viewsim__readout">
+          <div><span class="label" data-i18n="home.view.floor">Floor</span><b data-out="floor">20</b></div>
+          <div><span class="label" data-i18n="home.view.eye">Eye level</span><b data-out="height">—</b></div>
+          <div><span class="label" data-i18n="home.view.horizon">Horizon</span><b data-out="horizon">—</b></div>
+        </div>
+        <div class="viewsim__controls">
+          <div class="range viewsim__range">
+            <input type="range" min="4" max="37" step="1" value="20" data-i18n-attr="aria-label:home.view.floor" aria-label="Floor">
+          </div>
+          <div class="segmented" role="group" data-i18n-attr="aria-label:home.hero.light" aria-label="Light in Tbilisi">
+            <button type="button" data-viewsim-time="day" aria-pressed="true" data-i18n="home.hero.day">Day</button>
+            <button type="button" data-viewsim-time="dusk" aria-pressed="false" data-i18n="home.hero.sunset">Sunset</button>
+            <button type="button" data-viewsim-time="night" aria-pressed="false" data-i18n="home.hero.night">Night</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="container small faint viewsim__note" data-i18n="home.view.note">Illustration. Actual views depend on floor, orientation and weather; the horizon figure is the geometric distance to a sea-level horizon.</p>
+  </section>
+
+  <!-- 11 · Location -->
+  <section class="section location" id="location" data-floor="11" data-floor-label="floors.location">
+    <div class="container location__grid">
+      <div class="location__text">
+        <p class="eyebrow" data-i18n="home.loc.eyebrow">Location</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="home.loc.title">In the heart of <em>Vake</em></h2>
+        <p class="lead" data-i18n="home.loc.lead">On Ilia Chavchavadze Avenue, one of the most prestigious streets in Tbilisi — close to Vake Park, the university and the city centre.</p>
+        <ul class="distances" data-reveal="stagger">
+          <li><span data-i18n="home.loc.d1">Vake Park</span><b>≈ <span data-num="0.5">0.5</span> <span data-i18n="units.km">km</span></b></li>
+          <li><span data-i18n="home.loc.d2">Tbilisi State University</span><b>≈ <span data-num="2">2</span> <span data-i18n="units.km">km</span></b></li>
+          <li><span data-i18n="home.loc.d3">Rustaveli Avenue & Freedom Square</span><b>≈ <span data-num="4">4</span> <span data-i18n="units.km">km</span></b></li>
+          <li><span data-i18n="home.loc.d4">Old Tbilisi</span><b>≈ <span data-num="5">5</span> <span data-i18n="units.km">km</span></b></li>
+          <li><span data-i18n="home.loc.d5">Tbilisi International Airport</span><b>≈ <span data-num="17">17</span> <span data-i18n="units.km">km</span></b></li>
+        </ul>
+        <p class="small faint" data-i18n="home.loc.note">Approximate straight-line distances.</p>
+      </div>
+      <div class="location__map">
+        <div class="map" data-map></div>
+        <div class="map__card">
+          <p class="label">Axis Towers</p>
+          <p data-i18n="contact.addressLine">37m Ilia Chavchavadze Ave, Tbilisi 0179</p>
+          <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=41.7118,44.7568" target="_blank" rel="noopener"><span data-i18n="home.loc.directions">Get directions</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · News -->
+  <section class="section section--alt" id="news" data-floor="12" data-floor-label="floors.news">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.news.eyebrow">News</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="home.news.title">Latest from <em>Axis Towers</em></h2>
+        </div>
+        <div class="section-head__aside">
+          <a class="link" href="news.html"><span data-i18n="home.news.all">All news</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+      <div class="news-grid" data-news="3"></div>
+    </div>
+  </section>
+</main>
+
+  <!-- Full-screen 3D explorer: the hero canvas moves in here -->
+  <div class="explorer" data-explorer hidden role="dialog" aria-modal="true" aria-labelledby="explorer-title">
+    <div class="explorer__stage"></div>
+
+    <div class="explorer__top">
+      <div>
+        <p class="eyebrow" data-i18n="explorer.eyebrow">3D explorer</p>
+        <h2 class="h3" id="explorer-title" data-i18n="explorer.title">Axis Towers · Sunlight study</h2>
+      </div>
+      <div class="row" style="--gap:8px">
+        <div class="segmented" role="group" data-i18n-attr="aria-label:explorer.view" aria-label="View">
+          <button type="button" data-explorer-mode="real" aria-pressed="true" data-i18n="explorer.real">Realistic</button>
+          <button type="button" data-explorer-mode="functions" aria-pressed="false" data-i18n="explorer.uses">Uses</button>
+        </div>
+        <button class="icon-btn" type="button" data-explorer-close data-i18n-attr="aria-label:common.close" aria-label="Close">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="explorer__legend" data-explorer-legend hidden>
+      <span style="--dot:var(--z-residential)" data-i18n="zones.residential">Residences</span>
+      <span style="--dot:var(--z-office)" data-i18n="zones.office">Business Center</span>
+      <span style="--dot:var(--z-hotel)" data-i18n="zones.hotel">Pullman hotel</span>
+      <span style="--dot:var(--z-dining)" data-i18n="zones.dining">Restaurant & sky bar</span>
+      <span style="--dot:var(--z-retail)" data-i18n="zones.retail">Lobbies & retail</span>
+    </div>
+
+    <div class="explorer__side">
+      <div class="compass" data-compass aria-hidden="true"><span>N</span><i></i></div>
+      <div class="explorer__focus" role="group" data-i18n-attr="aria-label:explorer.focus" aria-label="Focus">
+        <button type="button" class="chip" data-explorer-focus="stone" data-i18n="towers.stone.short">Stone</button>
+        <button type="button" class="chip" data-explorer-focus="" data-i18n="explorer.both">Both</button>
+        <button type="button" class="chip" data-explorer-focus="glass" data-i18n="towers.glass.short">Glass</button>
+      </div>
+    </div>
+
+    <div class="floor-card" data-floor-card hidden aria-live="polite"></div>
+
+    <div class="explorer__panel">
+      <div class="explorer__readout">
+        <div><span class="label" data-i18n="explorer.time">Time</span><b data-out="time">--:--</b></div>
+        <div><span class="label" data-i18n="explorer.date">Date</span><b data-out="date">—</b></div>
+        <div><span class="label" data-i18n="explorer.sunrise">Sunrise</span><b data-out="sunrise">—</b></div>
+        <div><span class="label" data-i18n="explorer.sunset">Sunset</span><b data-out="sunset">—</b></div>
+        <div><span class="label" data-i18n="explorer.daylight">Daylight</span><b data-out="daylight">—</b></div>
+        <div><span class="label" data-i18n="explorer.altitude">Sun altitude</span><b data-out="altitude">—</b></div>
+      </div>
+      <div class="explorer__sliders">
+        <button class="icon-btn" type="button" data-explorer-play data-i18n-attr="aria-label:explorer.play" aria-label="Play the day">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.5 2.8v10.4L13 8z"/></svg>
+        </button>
+        <div class="range">
+          <label class="label" for="explorer-time" data-i18n="explorer.time">Time</label>
+          <input id="explorer-time" type="range" min="0" max="1435" step="5" value="720" data-explorer-time>
+        </div>
+        <div class="range">
+          <label class="label" for="explorer-day" data-i18n="explorer.season">Day of the year</label>
+          <input id="explorer-day" type="range" min="1" max="365" step="1" value="172" data-explorer-day>
+        </div>
+        <div class="explorer__seasons">
+          <button type="button" class="chip" data-explorer-season="80" data-i18n="explorer.spring">21 Mar</button>
+          <button type="button" class="chip" data-explorer-season="172" data-i18n="explorer.summer">21 Jun</button>
+          <button type="button" class="chip" data-explorer-season="266" data-i18n="explorer.autumn">23 Sep</button>
+          <button type="button" class="chip" data-explorer-season="355" data-i18n="explorer.winter">21 Dec</button>
+          <button type="button" class="chip" data-explorer-now data-i18n="explorer.now">Now</button>
+        </div>
+      </div>
+      <p class="small faint explorer__hint" data-i18n="explorer.hint">Drag to orbit · scroll or pinch to zoom · select a floor</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__cta">
+        <p class="eyebrow" data-i18n="footer.eyebrow">Visit Axis Towers</p>
+        <h2 class="display" data-reveal="lines" data-i18n="footer.title">Your address on the <em>Tbilisi skyline</em></h2>
+        <div class="row" style="--gap:14px">
+          <button class="btn btn--primary btn--lg" type="button" data-book data-magnetic="0.2"><span data-i18n="chrome.book">Book a viewing</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button>
+          <a class="btn btn--lg" href="tel:+995322371717" data-magnetic="0.2">+995 32 237 17 17</a>
+        </div>
+      </div>
+
+      <div class="footer__grid">
+        <div>
+          <h3 class="label" data-i18n="footer.visit">Visit</h3>
+          <p data-i18n="contact.addressLine">37m Ilia Chavchavadze Ave, Tbilisi 0179</p>
+          <p class="small faint" style="margin-top:10px" data-i18n="footer.district">Vake, Tbilisi, Georgia</p>
+        </div>
+        <div>
+          <h3 class="label" data-i18n="footer.contact">Contact</h3>
+          <ul>
+            <li><a href="tel:+995322371717">+995 32 237 17 17</a></li>
+            <li><a href="tel:*1717">*1717</a></li>
+            <li><a href="mailto:info@axistowers.ge">info@axistowers.ge</a></li>
+            <li><a href="mailto:sales@axistowers.ge">sales@axistowers.ge</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="label" data-i18n="footer.explore">Explore</h3>
+          <ul>
+            <li><a href="residences.html" data-i18n="nav.residences">Residences</a></li>
+            <li><a href="offices.html" data-i18n="nav.offices">Business Center</a></li>
+            <li><a href="hotel.html" data-i18n="nav.hotel">Hotel & Sky Bar</a></li>
+            <li><a href="lifestyle.html" data-i18n="nav.lifestyle">Lifestyle</a></li>
+            <li><a href="about.html" data-i18n="nav.about">The Towers</a></li>
+            <li><a href="news.html" data-i18n="nav.news">News</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="label" data-i18n="footer.tools">Tools</h3>
+          <ul>
+            <li><a href="index.html#explore" data-i18n="footer.tool3d">3D explorer</a></li>
+            <li><a href="residences.html#finder" data-i18n="footer.toolFinder">Apartment finder</a></li>
+            <li><a href="residences.html#calculator" data-i18n="footer.toolCalc">Payment calculator</a></li>
+            <li><a href="index.html#view" data-i18n="footer.toolView">View from your floor</a></li>
+            <li><button type="button" class="link-plain" data-palette data-i18n="footer.toolSearch">Search (⌘K)</button></li>
+            <li><button type="button" class="link-plain" data-settings data-i18n="footer.toolSettings">Language & currency</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__word" aria-hidden="true">AXIS</div>
+    <div class="container footer__bottom">
+      <span data-i18n="footer.copyright">© 2026 Axis Towers. All rights reserved.</span>
+      <span data-i18n="footer.wtc">World Trade Center Tbilisi</span>
+      <a href="#top" data-i18n="footer.top">Back to the lobby ↑</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>

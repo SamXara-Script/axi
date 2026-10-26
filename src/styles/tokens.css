@@ -1,0 +1,78 @@
+:root {
+  /* palette — "glass" (night) is the default, "stone" (day) is the light theme */
+  --bg: #0a0b0d;
+  --bg-2: #101114;
+  --bg-3: #16181c;
+  --bg-4: #1e2126;
+  --fg: #ede8df;
+  --fg-2: #a9a49b;
+  --fg-3: #6f6b65;
+  --line: rgba(237, 232, 223, 0.1);
+  --line-2: rgba(237, 232, 223, 0.2);
+  --accent: #c9a46a;
+  --accent-2: #e6c891;
+  --accent-ink: #14110c;
+  --glass: #7d93a8;
+  --success: #7fb08a;
+  --danger: #d9776b;
+  --scrim: rgba(6, 7, 9, 0.72);
+  --shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6);
+  --hero-fade: linear-gradient(180deg, rgba(10, 11, 13, 0.55) 0%, rgba(10, 11, 13, 0) 28%, rgba(10, 11, 13, 0) 62%, rgba(10, 11, 13, 0.92) 100%);
+
+  /* zone + chart colours live in features.css (validated palette) */
+
+  /* type */
+  --font-sans: 'Inter Tight', 'Noto Sans Georgian', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Cormorant', 'Noto Serif Georgian', 'Times New Roman', serif;
+  --fs-display: clamp(3.3rem, 10.4vw, 11.6rem);
+  --fs-h1: clamp(2.6rem, 6.4vw, 6.6rem);
+  --fs-h2: clamp(2.1rem, 4.5vw, 4.6rem);
+  --fs-h3: clamp(1.45rem, 2.2vw, 2.1rem);
+  --fs-h4: clamp(1.15rem, 1.4vw, 1.35rem);
+  --fs-lead: clamp(1.1rem, 1.45vw, 1.42rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-micro: 0.72rem;
+
+  /* space + shape */
+  --gutter: clamp(16px, 3.6vw, 56px);
+  --section: clamp(88px, 12vw, 210px);
+  --max: 1680px;
+  --header-h: 76px;
+  --radius: 4px;
+  --radius-lg: 14px;
+  --pill: 999px;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --dur: 0.6s;
+
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #efebe4;
+  --bg-2: #e7e2d9;
+  --bg-3: #ddd7cc;
+  --bg-4: #d2cbbf;
+  --fg: #121316;
+  --fg-2: #56534e;
+  --fg-3: #8b867e;
+  --line: rgba(18, 19, 22, 0.11);
+  --line-2: rgba(18, 19, 22, 0.22);
+  --accent: #98722f;
+  --accent-2: #7b5a20;
+  --accent-ink: #fbf7ef;
+  --glass: #4f6880;
+  --scrim: rgba(239, 235, 228, 0.78);
+  --shadow: 0 30px 80px -24px rgba(40, 32, 20, 0.28);
+  --hero-fade: linear-gradient(180deg, rgba(10, 11, 13, 0.45) 0%, rgba(10, 11, 13, 0) 28%, rgba(10, 11, 13, 0) 62%, rgba(239, 235, 228, 0.95) 100%);
+  color-scheme: light;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --header-h: 64px;
+  }
+}

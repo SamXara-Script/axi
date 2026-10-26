@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--#include head-->
+  <title>{{t:meta.about.title}}</title>
+  <meta name="i18n-title" content="meta.about.title">
+  <meta name="description" content="{{t:meta.about.description}}">
+</head>
+<body data-page="{{page}}">
+<!--#include header-->
+
+<main id="main">
+  <section class="page-hero" id="top" data-floor="01" data-floor-label="floors.overview">
+    <div class="container page-hero__grid">
+      <div class="page-hero__text">
+        <p class="eyebrow" data-i18n="about.eyebrow">{{t:about.eyebrow}}</p>
+        <h1 class="display page-hero__display" data-reveal="lines" data-i18n="about.title">{{t:about.title}}</h1>
+        <p class="lead" data-reveal="fade" data-i18n="about.lead">{{t:about.lead}}</p>
+        <dl class="page-hero__meta" data-reveal="stagger">
+          <div><dt data-i18n="about.m1">{{t:about.m1}}</dt><dd>147 <span data-i18n="units.m">{{t:units.m}}</span></dd></div>
+          <div><dt data-i18n="about.m2">{{t:about.m2}}</dt><dd>37 + 4</dd></div>
+          <div><dt data-i18n="about.m3">{{t:about.m3}}</dt><dd>2°</dd></div>
+          <div><dt data-i18n="about.m4">{{t:about.m4}}</dt><dd>12</dd></div>
+        </dl>
+      </div>
+      <div class="page-hero__art" aria-hidden="true"><svg data-drawing="both"></svg></div>
+    </div>
+  </section>
+
+  <section class="section" id="story" data-floor="02" data-floor-label="floors.story">
+    <div class="container split">
+      <div class="split__lead">
+        <p class="eyebrow" data-i18n="about.storyEyebrow">{{t:about.storyEyebrow}}</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="about.storyTitle">{{t:about.storyTitle}}</h2>
+      </div>
+      <div class="split__body prose">
+        <p class="lead" data-i18n="about.story1">{{t:about.story1}}</p>
+        <p data-i18n="about.story2">{{t:about.story2}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="architecture" data-floor="03" data-floor-label="floors.architecture">
+    <div class="container twist">
+      <div class="twist__text stack" style="--stack:24px">
+        <p class="eyebrow" data-i18n="about.archEyebrow">{{t:about.archEyebrow}}</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="about.archTitle">{{t:about.archTitle}}</h2>
+        <p class="lead" data-i18n="about.archLead">{{t:about.archLead}}</p>
+        <div class="twist__notes">
+          <div><h3 class="h4" data-i18n="about.a1t">{{t:about.a1t}}</h3><p class="muted" data-i18n="about.a1">{{t:about.a1}}</p></div>
+          <div><h3 class="h4" data-i18n="about.a2t">{{t:about.a2t}}</h3><p class="muted" data-i18n="about.a2">{{t:about.a2}}</p></div>
+        </div>
+      </div>
+      <div class="twist__demo" data-twist-demo>
+        <svg data-drawing="both" data-static></svg>
+        <div class="range twist__range">
+          <div class="range__head"><label class="label" for="twist-range" data-i18n="about.m3">{{t:about.m3}}</label><span class="range__value" data-twist-out>2.0°</span></div>
+          <input id="twist-range" type="range" min="0" max="4" step="0.1" value="2">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="structure" data-floor="04" data-floor-label="floors.structure">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="about.structEyebrow">{{t:about.structEyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="about.structTitle">{{t:about.structTitle}}</h2>
+        </div>
+      </div>
+      <div class="feature-cards" data-reveal="stagger">
+        <article class="feature-card"><span class="feature-card__num">1</span><h3 class="h4" data-i18n="about.st1t">{{t:about.st1t}}</h3><p class="muted" data-i18n="about.st1">{{t:about.st1}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">12</span><h3 class="h4" data-i18n="about.st2t">{{t:about.st2t}}</h3><p class="muted" data-i18n="about.st2">{{t:about.st2}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">2→1</span><h3 class="h4" data-i18n="about.st3t">{{t:about.st3t}}</h3><p class="muted" data-i18n="about.st3">{{t:about.st3}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">≈</span><h3 class="h4" data-i18n="about.st4t">{{t:about.st4t}}</h3><p class="muted" data-i18n="about.st4">{{t:about.st4}}</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="people" data-floor="05" data-floor-label="floors.people">
+    <div class="container split">
+      <div class="split__lead">
+        <p class="eyebrow" data-i18n="about.peopleEyebrow">{{t:about.peopleEyebrow}}</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="about.peopleTitle">{{t:about.peopleTitle}}</h2>
+        <p class="muted" data-i18n="about.peopleLead">{{t:about.peopleLead}}</p>
+      </div>
+      <div class="split__body">
+        <ul class="people" data-reveal="stagger">
+          <li>Alexander Mezhevidze</li>
+          <li>Gega Astakhishvili</li>
+          <li>Nino Mosulishvili</li>
+          <li>Nikoloz Kilasonia</li>
+        </ul>
+        <div class="people__more">
+          <div><h3 class="label" data-i18n="about.devTitle">{{t:about.devTitle}}</h3><p data-i18n="about.dev">{{t:about.dev}}</p></div>
+          <div><h3 class="label" data-i18n="about.partnersTitle">{{t:about.partnersTitle}}</h3><p data-i18n="about.partners">{{t:about.partners}}</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="timeline" data-floor="06" data-floor-label="floors.timeline">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="about.timelineEyebrow">{{t:about.timelineEyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="about.timelineTitle">{{t:about.timelineTitle}}</h2>
+        </div>
+      </div>
+      <ol class="timeline" data-reveal="stagger">
+        <li><span class="timeline__year">2019</span><p data-i18n="about.y2019">{{t:about.y2019}}</p></li>
+        <li><span class="timeline__year">2020</span><p data-i18n="about.y2020">{{t:about.y2020}}</p></li>
+        <li><span class="timeline__year">2022</span><p data-i18n="about.y2022">{{t:about.y2022}}</p></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<!--#include footer-->
+</body>
+</html>

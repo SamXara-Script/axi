@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--#include head-->
+  <title>{{t:meta.offices.title}}</title>
+  <meta name="i18n-title" content="meta.offices.title">
+  <meta name="description" content="{{t:meta.offices.description}}">
+</head>
+<body data-page="{{page}}">
+<!--#include header-->
+
+<main id="main">
+  <section class="page-hero" id="top" data-floor="01" data-floor-label="floors.overview">
+    <div class="container page-hero__grid">
+      <div class="page-hero__text">
+        <p class="eyebrow" data-i18n="offices.eyebrow">{{t:offices.eyebrow}}</p>
+        <h1 class="h1" data-reveal="lines" data-i18n="offices.title">{{t:offices.title}}</h1>
+        <p class="lead" data-reveal="fade" data-i18n="offices.lead">{{t:offices.lead}}</p>
+        <div class="row" data-reveal="fade" style="--gap:12px">
+          <a class="btn btn--primary" href="#finder" data-i18n="home.biz.cta">{{t:home.biz.cta}}</a>
+          <button class="btn" type="button" data-book="office" data-i18n="chrome.book">{{t:chrome.book}}</button>
+        </div>
+        <dl class="page-hero__meta" data-reveal="stagger">
+          <div><dt data-i18n="offices.m1">{{t:offices.m1}}</dt><dd><span data-num="17000">17,000</span> <span data-i18n="units.m2">{{t:units.m2}}</span></dd></div>
+          <div><dt data-i18n="offices.m2">{{t:offices.m2}}</dt><dd><span data-num="700">700</span> <span data-i18n="units.m2">{{t:units.m2}}</span></dd></div>
+          <div><dt data-i18n="offices.m3">{{t:offices.m3}}</dt><dd>7</dd></div>
+          <div><dt data-i18n="offices.m4">{{t:offices.m4}}</dt><dd>2020</dd></div>
+        </dl>
+      </div>
+      <div class="page-hero__art" aria-hidden="true"><svg data-drawing="glass" data-highlight="office"></svg></div>
+    </div>
+  </section>
+
+  <section class="section" id="features" data-floor="02" data-floor-label="floors.features">
+    <div class="container">
+      <div class="feature-cards feature-cards--3" data-reveal="stagger">
+        <article class="feature-card"><span class="feature-card__num">01</span><h2 class="h4" data-i18n="offices.f1t">{{t:offices.f1t}}</h2><p class="muted" data-i18n="offices.f1">{{t:offices.f1}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">02</span><h2 class="h4" data-i18n="offices.f2t">{{t:offices.f2t}}</h2><p class="muted" data-i18n="offices.f2">{{t:offices.f2}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">03</span><h2 class="h4" data-i18n="offices.f3t">{{t:offices.f3t}}</h2><p class="muted" data-i18n="offices.f3">{{t:offices.f3}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">04</span><h2 class="h4" data-i18n="offices.f4t">{{t:offices.f4t}}</h2><p class="muted" data-i18n="offices.f4">{{t:offices.f4}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">05</span><h2 class="h4" data-i18n="offices.f5t">{{t:offices.f5t}}</h2><p class="muted" data-i18n="offices.f5">{{t:offices.f5}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">06</span><h2 class="h4" data-i18n="offices.f6t">{{t:offices.f6t}}</h2><p class="muted" data-i18n="offices.f6">{{t:offices.f6}}</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt wtc" id="wtc" data-floor="03" data-floor-label="floors.wtc">
+    <div class="container wtc__grid">
+      <div class="wtc__badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/><ellipse cx="100" cy="100" rx="34" ry="70" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/><path d="M30 100h140M38 66h124M38 134h124" stroke="currentColor" stroke-width="1" opacity=".5"/></svg>
+        <span>WTC<small>TBILISI</small></span>
+      </div>
+      <div class="stack" style="--stack:26px">
+        <p class="eyebrow" data-i18n="offices.wtcEyebrow">{{t:offices.wtcEyebrow}}</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="offices.wtcTitle">{{t:offices.wtcTitle}}</h2>
+        <p class="lead" data-i18n="offices.wtcLead">{{t:offices.wtcLead}}</p>
+        <ul class="ticks">
+          <li data-i18n="offices.wtc1">{{t:offices.wtc1}}</li>
+          <li data-i18n="offices.wtc2">{{t:offices.wtc2}}</li>
+          <li data-i18n="offices.wtc3">{{t:offices.wtc3}}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="finder" data-floor="04" data-floor-label="floors.finder">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="offices.finderEyebrow">{{t:offices.finderEyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="offices.finderTitle">{{t:offices.finderTitle}}</h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="offices.finderLead">{{t:offices.finderLead}}</p></div>
+      </div>
+      <div class="finder" data-finder="office"></div>
+    </div>
+  </section>
+</main>
+
+<!--#include footer-->
+</body>
+</html>

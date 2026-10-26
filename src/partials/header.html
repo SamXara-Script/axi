@@ -1,0 +1,80 @@
+  <a class="skip-link" href="#main" data-i18n="chrome.skip">{{t:chrome.skip}}</a>
+  <div class="guides" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html" data-i18n-attr="aria-label:chrome.homeLabel" aria-label="{{t:chrome.homeLabel}}">
+        <!--#include logo-->
+        <span class="logo__word"><b>AXIS</b><span>TOWERS</span></span>
+      </a>
+      <nav class="nav" data-i18n-attr="aria-label:chrome.primaryNav" aria-label="{{t:chrome.primaryNav}}">
+        <a href="residences.html" data-i18n="nav.residences">{{t:nav.residences}}</a>
+        <a href="offices.html" data-i18n="nav.offices">{{t:nav.offices}}</a>
+        <a href="hotel.html" data-i18n="nav.hotel">{{t:nav.hotel}}</a>
+        <a href="lifestyle.html" data-i18n="nav.lifestyle">{{t:nav.lifestyle}}</a>
+        <a href="about.html" data-i18n="nav.about">{{t:nav.about}}</a>
+        <a href="news.html" data-i18n="nav.news">{{t:nav.news}}</a>
+        <a href="contact.html" data-i18n="nav.contact">{{t:nav.contact}}</a>
+      </nav>
+      <div class="header__tools">
+        <div class="clock" data-clock aria-hidden="true"></div>
+        <div class="lang-switch" role="group" data-i18n-attr="aria-label:chrome.language" aria-label="{{t:chrome.language}}">
+          <button type="button" data-lang="ka" lang="ka" aria-pressed="false">ქარ</button>
+          <button type="button" data-lang="en" lang="en" aria-pressed="true">Eng</button>
+          <button type="button" data-lang="ru" lang="ru" aria-pressed="false">Рус</button>
+        </div>
+        <button class="search-trigger" type="button" data-palette data-i18n-attr="aria-label:chrome.search" aria-label="{{t:chrome.search}}">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>
+          <span data-i18n="chrome.search">{{t:chrome.search}}</span><kbd>⌘K</kbd>
+        </button>
+        <button class="btn btn--primary btn--sm btn-book" type="button" data-book data-magnetic="0.25" data-i18n="chrome.book">{{t:chrome.book}}</button>
+        <button class="burger" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu" data-i18n-attr="aria-label:chrome.menu" aria-label="{{t:chrome.menu}}"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" id="menu">
+    <nav class="menu__links" data-i18n-attr="aria-label:chrome.menu" aria-label="{{t:chrome.menu}}">
+      <a href="index.html" data-preview="00"><small>00</small><span data-i18n="nav.home">{{t:nav.home}}</span></a>
+      <a href="residences.html" data-preview="04–37"><small>04</small><span data-i18n="nav.residences">{{t:nav.residences}}</span></a>
+      <a href="offices.html" data-preview="04–18"><small>12</small><span data-i18n="nav.offices">{{t:nav.offices}}</span></a>
+      <a href="hotel.html" data-preview="19–37"><small>19</small><span data-i18n="nav.hotel">{{t:nav.hotel}}</span></a>
+      <a href="lifestyle.html" data-preview="−1"><small>−1</small><span data-i18n="nav.lifestyle">{{t:nav.lifestyle}}</span></a>
+      <a href="about.html" data-preview="147"><small>147</small><span data-i18n="nav.about">{{t:nav.about}}</span></a>
+      <a href="news.html" data-preview="2026"><small>NEWS</small><span data-i18n="nav.news">{{t:nav.news}}</span></a>
+      <a href="contact.html" data-preview="37M"><small>37M</small><span data-i18n="nav.contact">{{t:nav.contact}}</span></a>
+    </nav>
+    <aside class="menu__aside">
+      <div class="menu__preview" aria-hidden="true"><span data-menu-preview>00</span></div>
+      <div class="menu__contact">
+        <p class="label" data-i18n="footer.visit">{{t:footer.visit}}</p>
+        <p data-i18n="contact.addressLine">{{t:contact.addressLine}}</p>
+        <a href="tel:+995322371717">+995 32 237 17 17</a>
+        <a href="mailto:info@axistowers.ge">info@axistowers.ge</a>
+      </div>
+      <div class="row">
+        <div class="lang-switch" role="group" data-i18n-attr="aria-label:chrome.language" aria-label="{{t:chrome.language}}">
+          <button type="button" data-lang="ka" lang="ka" aria-pressed="false">ქართული</button>
+          <button type="button" data-lang="en" lang="en" aria-pressed="true">English</button>
+          <button type="button" data-lang="ru" lang="ru" aria-pressed="false">Русский</button>
+        </div>
+        <button class="btn btn--primary btn--sm" type="button" data-book data-i18n="chrome.book">{{t:chrome.book}}</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__half preloader__half--l"></div>
+    <div class="preloader__half preloader__half--r"></div>
+    <div class="preloader__axis"></div>
+    <div class="preloader__content">
+      <div class="preloader__word"><span>A</span><span>X</span><span>I</span><span>S</span></div>
+    </div>
+    <div class="preloader__meta">
+      <span>41.7118° N<br>44.7568° E</span>
+      <span class="preloader__floor"><small>FL</small><b>B4</b></span>
+      <span>147 M<br>TBILISI</span>
+    </div>
+  </div>
+  <div class="curtain" aria-hidden="true"><div class="curtain__label">Axis Towers</div></div>
+  <div class="float-tip" aria-hidden="true"></div>

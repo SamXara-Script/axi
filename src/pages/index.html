@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--#include head-->
+  <title>{{t:meta.home.title}}</title>
+  <meta name="i18n-title" content="meta.home.title">
+  <meta name="description" content="{{t:meta.home.description}}">
+</head>
+<body data-page="{{page}}">
+<!--#include header-->
+
+<main id="main">
+  <!-- 00 · Lobby — live 3D towers -->
+  <section class="hero" id="top" data-hero data-floor="00" data-floor-label="floors.lobby">
+    <div class="hero__stage"><canvas class="hero__canvas" data-towers aria-label="{{t:home.hero.canvasLabel}}" data-i18n-attr="aria-label:home.hero.canvasLabel" role="img"></canvas></div>
+    <svg class="hero__fallback" data-drawing="both" aria-hidden="true"></svg>
+    <div class="hero__shade" aria-hidden="true"></div>
+
+    <div class="container hero__content">
+      <p class="eyebrow" data-hero-fade data-i18n="home.hero.eyebrow">{{t:home.hero.eyebrow}}</p>
+      <h1 class="hero__title">
+        <span><span>Axis</span></span>
+        <span><span>Towers</span></span>
+      </h1>
+      <div class="hero__intro">
+        <p class="lead" data-hero-fade data-i18n="home.hero.lead">{{t:home.hero.lead}}</p>
+        <div class="row" data-hero-fade style="--gap:12px">
+          <button class="btn btn--primary" type="button" data-explore data-magnetic="0.2">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 1.5l5.5 3v7L8 14.5l-5.5-3v-7z"/><path d="M2.5 4.5L8 7.5l5.5-3M8 7.5v7"/></svg>
+            <span data-i18n="home.hero.explore">{{t:home.hero.explore}}</span>
+          </button>
+          <a class="btn" href="residences.html" data-magnetic="0.2"><span data-i18n="home.hero.find">{{t:home.hero.find}}</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__bar container" data-hero-fade>
+      <dl class="hero__facts">
+        <div><dt data-i18n="home.hero.factHeight">{{t:home.hero.factHeight}}</dt><dd>147 <small data-i18n="units.m">{{t:units.m}}</small></dd></div>
+        <div><dt data-i18n="home.hero.factFloors">{{t:home.hero.factFloors}}</dt><dd>37 <small>+4</small></dd></div>
+        <div><dt data-i18n="home.hero.factTwist">{{t:home.hero.factTwist}}</dt><dd>2° <small data-i18n="home.hero.perFloor">{{t:home.hero.perFloor}}</small></dd></div>
+      </dl>
+      <div class="hero__light">
+        <span class="label"><span data-i18n="home.hero.light">{{t:home.hero.light}}</span> · <span data-live-time>--:--</span></span>
+        <div class="segmented" role="group" data-i18n-attr="aria-label:home.hero.light" aria-label="{{t:home.hero.light}}">
+          <button type="button" data-preset="live" aria-pressed="true" data-i18n="home.hero.live">{{t:home.hero.live}}</button>
+          <button type="button" data-preset="sunrise" aria-pressed="false" data-i18n="home.hero.sunrise">{{t:home.hero.sunrise}}</button>
+          <button type="button" data-preset="day" aria-pressed="false" data-i18n="home.hero.day">{{t:home.hero.day}}</button>
+          <button type="button" data-preset="sunset" aria-pressed="false" data-i18n="home.hero.sunset">{{t:home.hero.sunset}}</button>
+          <button type="button" data-preset="night" aria-pressed="false" data-i18n="home.hero.night">{{t:home.hero.night}}</button>
+        </div>
+      </div>
+      <a class="hero__scroll" href="#intro"><span data-i18n="home.hero.scroll">{{t:home.hero.scroll}}</span><i></i></a>
+    </div>
+  </section>
+
+  <!-- 01 · Intro -->
+  <section class="section intro" id="intro" data-floor="01" data-floor-label="floors.intro">
+    <div class="container">
+      <p class="eyebrow" data-i18n="home.intro.eyebrow">{{t:home.intro.eyebrow}}</p>
+      <p class="intro__text" data-scrub-text data-i18n="home.intro.text">{{t:home.intro.text}}</p>
+      <div class="intro__foot">
+        <p class="muted" data-i18n="home.intro.note">{{t:home.intro.note}}</p>
+        <a class="link" href="about.html"><span data-i18n="home.intro.link">{{t:home.intro.link}}</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · Numbers -->
+  <section class="section section--tight" id="numbers" data-floor="02" data-floor-label="floors.numbers">
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><p class="stat__value"><span data-count="147">147</span><small data-i18n="units.m">{{t:units.m}}</small></p><p class="stat__label" data-i18n="home.numbers.height">{{t:home.numbers.height}}</p></div>
+        <div class="stat"><p class="stat__value"><span data-count="41">41</span></p><p class="stat__label" data-i18n="home.numbers.floors">{{t:home.numbers.floors}}</p></div>
+        <div class="stat"><p class="stat__value"><span data-count="218">218</span></p><p class="stat__label" data-i18n="home.numbers.rooms">{{t:home.numbers.rooms}}</p></div>
+        <div class="stat"><p class="stat__value"><span data-count="17000">17,000</span><small data-i18n="units.m2">{{t:units.m2}}</small></p><p class="stat__label" data-i18n="home.numbers.office">{{t:home.numbers.office}}</p></div>
+        <div class="stat"><p class="stat__value"><span data-count="2500">2,500</span><small data-i18n="units.m2">{{t:units.m2}}</small></p><p class="stat__label" data-i18n="home.numbers.courtyard">{{t:home.numbers.courtyard}}</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · Two towers -->
+  <section class="section duo" id="towers" data-floor="03" data-floor-label="floors.towers">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.duo.eyebrow">{{t:home.duo.eyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="home.duo.title">{{t:home.duo.title}}</h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="home.duo.lead">{{t:home.duo.lead}}</p></div>
+      </div>
+      <div class="duo__grid">
+        <a class="duo__card duo__card--stone" href="residences.html" data-cursor="Open" data-cursor-i18n="common.open">
+          <svg class="duo__drawing" data-drawing="stone" data-highlight="residential"></svg>
+          <div class="duo__text">
+            <p class="label" data-i18n="towers.stone.floors">{{t:towers.stone.floors}}</p>
+            <h3 class="h2" data-i18n="towers.stone.name">{{t:towers.stone.name}}</h3>
+            <p class="muted" data-i18n="home.duo.stone">{{t:home.duo.stone}}</p>
+            <ul class="duo__uses"><li style="--dot:var(--z-residential)" data-i18n="zones.residential">{{t:zones.residential}}</li><li style="--dot:var(--z-retail)" data-i18n="zones.retail">{{t:zones.retail}}</li></ul>
+          </div>
+        </a>
+        <a class="duo__card duo__card--glass" href="offices.html" data-cursor="Open" data-cursor-i18n="common.open">
+          <svg class="duo__drawing" data-drawing="glass" data-highlight="office,hotel,dining"></svg>
+          <div class="duo__text">
+            <p class="label" data-i18n="towers.glass.floors">{{t:towers.glass.floors}}</p>
+            <h3 class="h2" data-i18n="towers.glass.name">{{t:towers.glass.name}}</h3>
+            <p class="muted" data-i18n="home.duo.glass">{{t:home.duo.glass}}</p>
+            <ul class="duo__uses"><li style="--dot:var(--z-office)" data-i18n="zones.office">{{t:zones.office}}</li><li style="--dot:var(--z-hotel)" data-i18n="zones.hotel">{{t:zones.hotel}}</li><li style="--dot:var(--z-dining)" data-i18n="zones.dining">{{t:zones.dining}}</li></ul>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · Inside: stacking plan -->
+  <section class="section section--alt" id="inside" data-floor="04" data-floor-label="floors.inside">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.inside.eyebrow">{{t:home.inside.eyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="home.inside.title">{{t:home.inside.title}}</h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="home.inside.lead">{{t:home.inside.lead}}</p></div>
+      </div>
+      <div class="stacking" data-stacking>
+        <div class="stacking__filters" role="group" data-i18n-attr="aria-label:stacking.filter" aria-label="{{t:stacking.filter}}"></div>
+        <div class="stacking__body">
+          <div class="stacking__plot"></div>
+          <div class="stacking__info" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · Residences -->
+  <section class="section feature" id="residences" data-floor="05" data-floor-label="floors.residences">
+    <div class="container feature__grid">
+      <div class="feature__media" data-reveal="image">
+        <div class="art art--stone" aria-hidden="true"><svg data-drawing="stone" data-highlight="residential"></svg><span class="art__num">04–37</span></div>
+      </div>
+      <div class="feature__text">
+        <p class="eyebrow"><b>04–37</b> <span data-i18n="home.res.eyebrow">{{t:home.res.eyebrow}}</span></p>
+        <h2 class="h1" data-reveal="lines" data-i18n="home.res.title">{{t:home.res.title}}</h2>
+        <p class="lead" data-i18n="home.res.lead">{{t:home.res.lead}}</p>
+        <ul class="ticks" data-reveal="stagger">
+          <li data-i18n="home.res.p1">{{t:home.res.p1}}</li>
+          <li data-i18n="home.res.p2">{{t:home.res.p2}}</li>
+          <li data-i18n="home.res.p3">{{t:home.res.p3}}</li>
+          <li data-i18n="home.res.p4">{{t:home.res.p4}}</li>
+        </ul>
+        <div class="row" style="--gap:12px">
+          <a class="btn btn--primary" href="residences.html#finder" data-i18n="home.res.cta">{{t:home.res.cta}}</a>
+          <a class="btn" href="residences.html#calculator" data-i18n="home.res.cta2">{{t:home.res.cta2}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · Business centre + WTC -->
+  <section class="section feature feature--flip" id="business" data-floor="06" data-floor-label="floors.business">
+    <div class="container feature__grid">
+      <div class="feature__media" data-reveal="image">
+        <div class="art art--glass" aria-hidden="true"><svg data-drawing="glass" data-highlight="office"></svg><span class="art__num">04–18</span></div>
+      </div>
+      <div class="feature__text">
+        <p class="eyebrow"><b>WTC</b> <span data-i18n="home.biz.eyebrow">{{t:home.biz.eyebrow}}</span></p>
+        <h2 class="h1" data-reveal="lines" data-i18n="home.biz.title">{{t:home.biz.title}}</h2>
+        <p class="lead" data-i18n="home.biz.lead">{{t:home.biz.lead}}</p>
+        <dl class="mini-stats">
+          <div><dt data-i18n="home.biz.s1">{{t:home.biz.s1}}</dt><dd><span data-num="17000">17,000</span> <span data-i18n="units.m2">{{t:units.m2}}</span></dd></div>
+          <div><dt data-i18n="home.biz.s2">{{t:home.biz.s2}}</dt><dd><span data-num="700">700</span> <span data-i18n="units.m2">{{t:units.m2}}</span></dd></div>
+          <div><dt data-i18n="home.biz.s3">{{t:home.biz.s3}}</dt><dd>7</dd></div>
+        </dl>
+        <div class="row" style="--gap:12px">
+          <a class="btn btn--primary" href="offices.html#finder" data-i18n="home.biz.cta">{{t:home.biz.cta}}</a>
+          <a class="btn" href="offices.html#wtc" data-i18n="home.biz.cta2">{{t:home.biz.cta2}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 · Hotel, Dumas, Weather Report -->
+  <section class="section section--alt sky" id="hotel" data-floor="07" data-floor-label="floors.hotel">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.hotel.eyebrow">{{t:home.hotel.eyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="home.hotel.title">{{t:home.hotel.title}}</h2>
+        </div>
+        <div class="section-head__aside">
+          <p class="lead" data-i18n="home.hotel.lead">{{t:home.hotel.lead}}</p>
+          <a class="link" href="hotel.html"><span data-i18n="home.hotel.link">{{t:home.hotel.link}}</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+      <ol class="levels" data-reveal="stagger">
+        <li class="level" style="--zc:var(--z-dining)">
+          <span class="level__floor">37</span>
+          <div><h3 class="h3">Weather Report</h3><p class="muted" data-i18n="home.hotel.l37">{{t:home.hotel.l37}}</p></div>
+          <span class="level__tag" data-i18n="home.hotel.t37">{{t:home.hotel.t37}}</span>
+        </li>
+        <li class="level" style="--zc:var(--z-dining)">
+          <span class="level__floor">36</span>
+          <div><h3 class="h3">Dumas</h3><p class="muted" data-i18n="home.hotel.l36">{{t:home.hotel.l36}}</p></div>
+          <span class="level__tag" data-i18n="home.hotel.t36">{{t:home.hotel.t36}}</span>
+        </li>
+        <li class="level" style="--zc:var(--z-hotel)">
+          <span class="level__floor">19–35</span>
+          <div><h3 class="h3">Pullman Tbilisi Axis Towers</h3><p class="muted" data-i18n="home.hotel.l19">{{t:home.hotel.l19}}</p></div>
+          <span class="level__tag" data-i18n="home.hotel.t19">{{t:home.hotel.t19}}</span>
+        </li>
+        <li class="level" style="--zc:var(--z-retail)">
+          <span class="level__floor" data-i18n="home.hotel.podium">{{t:home.hotel.podium}}</span>
+          <div><h3 class="h3" data-i18n="home.hotel.poolTitle">{{t:home.hotel.poolTitle}}</h3><p class="muted" data-i18n="home.hotel.pool">{{t:home.hotel.pool}}</p></div>
+          <span class="level__tag">25 × 9 <span data-i18n="units.m">{{t:units.m}}</span></span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 08 · Lifestyle -->
+  <section class="section" id="lifestyle" data-floor="08" data-floor-label="floors.lifestyle">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.life.eyebrow">{{t:home.life.eyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="home.life.title">{{t:home.life.title}}</h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="home.life.lead">{{t:home.life.lead}}</p></div>
+      </div>
+      <div class="cards3" data-reveal="stagger">
+        <a class="tile-card" href="lifestyle.html#falestra">
+          <span class="tile-card__floor">G</span>
+          <h3 class="h3">Falestra</h3>
+          <p class="muted" data-i18n="home.life.falestra">{{t:home.life.falestra}}</p>
+          <span class="tile-card__more" data-i18n="common.discover">{{t:common.discover}}</span>
+        </a>
+        <a class="tile-card" href="lifestyle.html#shopping">
+          <span class="tile-card__floor">−1</span>
+          <h3 class="h3" data-i18n="home.life.shopTitle">{{t:home.life.shopTitle}}</h3>
+          <p class="muted" data-i18n="home.life.shop">{{t:home.life.shop}}</p>
+          <span class="tile-card__more" data-i18n="common.discover">{{t:common.discover}}</span>
+        </a>
+        <a class="tile-card" href="lifestyle.html#wellness">
+          <span class="tile-card__floor">SPA</span>
+          <h3 class="h3" data-i18n="home.life.spaTitle">{{t:home.life.spaTitle}}</h3>
+          <p class="muted" data-i18n="home.life.spa">{{t:home.life.spa}}</p>
+          <span class="tile-card__more" data-i18n="common.discover">{{t:common.discover}}</span>
+        </a>
+      </div>
+    </div>
+    <div class="marquee" data-marquee="38" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Residences <svg viewBox="0 0 20 20"><path d="M10 0v20M0 10h20" stroke="currentColor"/></svg> <em>Business</em> <svg viewBox="0 0 20 20"><path d="M10 0v20M0 10h20" stroke="currentColor"/></svg> Pullman <svg viewBox="0 0 20 20"><path d="M10 0v20M0 10h20" stroke="currentColor"/></svg> <em>Sky bar</em> <svg viewBox="0 0 20 20"><path d="M10 0v20M0 10h20" stroke="currentColor"/></svg> Falestra <svg viewBox="0 0 20 20"><path d="M10 0v20M0 10h20" stroke="currentColor"/></svg> <em>Wellness</em> <svg viewBox="0 0 20 20"><path d="M10 0v20M0 10h20" stroke="currentColor"/></svg></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 · Sunlight study / 3D explorer -->
+  <section class="section section--alt sunband" id="sunlight" data-floor="09" data-floor-label="floors.sunlight">
+    <div class="container sunband__grid">
+      <div>
+        <p class="eyebrow" data-i18n="home.sun.eyebrow">{{t:home.sun.eyebrow}}</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="home.sun.title">{{t:home.sun.title}}</h2>
+      </div>
+      <div class="stack">
+        <p class="lead" data-i18n="home.sun.lead">{{t:home.sun.lead}}</p>
+        <ul class="ticks">
+          <li data-i18n="home.sun.p1">{{t:home.sun.p1}}</li>
+          <li data-i18n="home.sun.p2">{{t:home.sun.p2}}</li>
+          <li data-i18n="home.sun.p3">{{t:home.sun.p3}}</li>
+        </ul>
+        <button class="btn btn--primary btn--lg" type="button" data-explore data-magnetic="0.2">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M3 13l1.4-1.4M11.6 4.4L13 3"/></svg>
+          <span data-i18n="home.sun.cta">{{t:home.sun.cta}}</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · View from your floor -->
+  <section class="section viewsim" id="view" data-viewsim data-time="day" data-floor="10" data-floor-label="floors.view">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.view.eyebrow">{{t:home.view.eyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="home.view.title">{{t:home.view.title}}</h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="home.view.lead">{{t:home.view.lead}}</p></div>
+      </div>
+    </div>
+    <div class="viewsim__stage">
+      <div class="viewsim__marks">
+        <span data-min-floor="8" style="left:68%;top:38%" data-i18n="home.view.tv">{{t:home.view.tv}}</span>
+        <span data-min-floor="18" style="left:80%;top:56%" data-i18n="home.view.old">{{t:home.view.old}}</span>
+        <span data-min-floor="28" style="left:14%;top:30%" data-i18n="home.view.caucasus">{{t:home.view.caucasus}}</span>
+      </div>
+      <div class="viewsim__hud container">
+        <div class="viewsim__readout">
+          <div><span class="label" data-i18n="home.view.floor">{{t:home.view.floor}}</span><b data-out="floor">20</b></div>
+          <div><span class="label" data-i18n="home.view.eye">{{t:home.view.eye}}</span><b data-out="height">—</b></div>
+          <div><span class="label" data-i18n="home.view.horizon">{{t:home.view.horizon}}</span><b data-out="horizon">—</b></div>
+        </div>
+        <div class="viewsim__controls">
+          <div class="range viewsim__range">
+            <input type="range" min="4" max="37" step="1" value="20" data-i18n-attr="aria-label:home.view.floor" aria-label="{{t:home.view.floor}}">
+          </div>
+          <div class="segmented" role="group" data-i18n-attr="aria-label:home.hero.light" aria-label="{{t:home.hero.light}}">
+            <button type="button" data-viewsim-time="day" aria-pressed="true" data-i18n="home.hero.day">{{t:home.hero.day}}</button>
+            <button type="button" data-viewsim-time="dusk" aria-pressed="false" data-i18n="home.hero.sunset">{{t:home.hero.sunset}}</button>
+            <button type="button" data-viewsim-time="night" aria-pressed="false" data-i18n="home.hero.night">{{t:home.hero.night}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="container small faint viewsim__note" data-i18n="home.view.note">{{t:home.view.note}}</p>
+  </section>
+
+  <!-- 11 · Location -->
+  <section class="section location" id="location" data-floor="11" data-floor-label="floors.location">
+    <div class="container location__grid">
+      <div class="location__text">
+        <p class="eyebrow" data-i18n="home.loc.eyebrow">{{t:home.loc.eyebrow}}</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="home.loc.title">{{t:home.loc.title}}</h2>
+        <p class="lead" data-i18n="home.loc.lead">{{t:home.loc.lead}}</p>
+        <ul class="distances" data-reveal="stagger">
+          <li><span data-i18n="home.loc.d1">{{t:home.loc.d1}}</span><b>≈ <span data-num="0.5">0.5</span> <span data-i18n="units.km">{{t:units.km}}</span></b></li>
+          <li><span data-i18n="home.loc.d2">{{t:home.loc.d2}}</span><b>≈ <span data-num="2">2</span> <span data-i18n="units.km">{{t:units.km}}</span></b></li>
+          <li><span data-i18n="home.loc.d3">{{t:home.loc.d3}}</span><b>≈ <span data-num="4">4</span> <span data-i18n="units.km">{{t:units.km}}</span></b></li>
+          <li><span data-i18n="home.loc.d4">{{t:home.loc.d4}}</span><b>≈ <span data-num="5">5</span> <span data-i18n="units.km">{{t:units.km}}</span></b></li>
+          <li><span data-i18n="home.loc.d5">{{t:home.loc.d5}}</span><b>≈ <span data-num="17">17</span> <span data-i18n="units.km">{{t:units.km}}</span></b></li>
+        </ul>
+        <p class="small faint" data-i18n="home.loc.note">{{t:home.loc.note}}</p>
+      </div>
+      <div class="location__map">
+        <div class="map" data-map></div>
+        <div class="map__card">
+          <p class="label">Axis Towers</p>
+          <p data-i18n="contact.addressLine">{{t:contact.addressLine}}</p>
+          <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=41.7118,44.7568" target="_blank" rel="noopener"><span data-i18n="home.loc.directions">{{t:home.loc.directions}}</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · News -->
+  <section class="section section--alt" id="news" data-floor="12" data-floor-label="floors.news">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="home.news.eyebrow">{{t:home.news.eyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="home.news.title">{{t:home.news.title}}</h2>
+        </div>
+        <div class="section-head__aside">
+          <a class="link" href="news.html"><span data-i18n="home.news.all">{{t:home.news.all}}</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+      <div class="news-grid" data-news="3"></div>
+    </div>
+  </section>
+</main>
+
+<!--#include explorer-->
+<!--#include footer-->
+</body>
+</html>

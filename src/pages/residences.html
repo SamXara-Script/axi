@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--#include head-->
+  <title>{{t:meta.residences.title}}</title>
+  <meta name="i18n-title" content="meta.residences.title">
+  <meta name="description" content="{{t:meta.residences.description}}">
+</head>
+<body data-page="{{page}}">
+<!--#include header-->
+
+<main id="main">
+  <section class="page-hero" id="top" data-floor="01" data-floor-label="floors.overview">
+    <div class="container page-hero__grid">
+      <div class="page-hero__text">
+        <p class="eyebrow" data-i18n="residences.eyebrow">{{t:residences.eyebrow}}</p>
+        <h1 class="h1" data-reveal="lines" data-i18n="residences.title">{{t:residences.title}}</h1>
+        <p class="lead" data-reveal="fade" data-i18n="residences.lead">{{t:residences.lead}}</p>
+        <div class="row" data-reveal="fade" style="--gap:12px">
+          <a class="btn btn--primary" href="#finder" data-i18n="home.res.cta">{{t:home.res.cta}}</a>
+          <button class="btn" type="button" data-book="residence" data-i18n="chrome.book">{{t:chrome.book}}</button>
+        </div>
+        <dl class="page-hero__meta" data-reveal="stagger">
+          <div><dt data-i18n="residences.m1">{{t:residences.m1}}</dt><dd>4–37</dd></div>
+          <div><dt data-i18n="residences.m2">{{t:residences.m2}}</dt><dd>≈ 156</dd></div>
+          <div><dt data-i18n="residences.m3">{{t:residences.m3}}</dt><dd><span data-num="40.6">40.6</span> <span data-i18n="units.m2">{{t:units.m2}}</span></dd></div>
+          <div><dt data-i18n="residences.m4">{{t:residences.m4}}</dt><dd><span data-num="2500">2,500</span> <span data-i18n="units.m2">{{t:units.m2}}</span></dd></div>
+        </dl>
+      </div>
+      <div class="page-hero__art" aria-hidden="true"><svg data-drawing="stone" data-highlight="residential"></svg></div>
+    </div>
+  </section>
+
+  <section class="section" id="features" data-floor="02" data-floor-label="floors.features">
+    <div class="container">
+      <div class="feature-cards" data-reveal="stagger">
+        <article class="feature-card"><span class="feature-card__num">01</span><h2 class="h4" data-i18n="residences.f1t">{{t:residences.f1t}}</h2><p class="muted" data-i18n="residences.f1">{{t:residences.f1}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">02</span><h2 class="h4" data-i18n="residences.f2t">{{t:residences.f2t}}</h2><p class="muted" data-i18n="residences.f2">{{t:residences.f2}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">03</span><h2 class="h4" data-i18n="residences.f3t">{{t:residences.f3t}}</h2><p class="muted" data-i18n="residences.f3">{{t:residences.f3}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">04</span><h2 class="h4" data-i18n="residences.f4t">{{t:residences.f4t}}</h2><p class="muted" data-i18n="residences.f4">{{t:residences.f4}}</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="finder" data-floor="03" data-floor-label="floors.finder">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="residences.finderEyebrow">{{t:residences.finderEyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="residences.finderTitle">{{t:residences.finderTitle}}</h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="residences.finderLead">{{t:residences.finderLead}}</p></div>
+      </div>
+      <div class="finder" data-finder="apartment"></div>
+    </div>
+  </section>
+
+  <section class="section" id="layouts" data-floor="04" data-floor-label="floors.layouts">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="residences.layoutsEyebrow">{{t:residences.layoutsEyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="residences.layoutsTitle">{{t:residences.layoutsTitle}}</h2>
+        </div>
+        <div class="section-head__aside"><p class="small faint" data-i18n="finder.plan">{{t:finder.plan}}</p></div>
+      </div>
+      <div class="layouts" data-layouts></div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="calculator" data-floor="05" data-floor-label="floors.calculator">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="residences.calcEyebrow">{{t:residences.calcEyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="residences.calcTitle">{{t:residences.calcTitle}}</h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="residences.calcLead">{{t:residences.calcLead}}</p></div>
+      </div>
+      <div data-calculator></div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" data-floor="06" data-floor-label="floors.faq">
+    <div class="container faq">
+      <h2 class="h1" data-reveal="lines" data-i18n="residences.faqTitle">{{t:residences.faqTitle}}</h2>
+      <div class="accordion" data-faq="residences"></div>
+    </div>
+  </section>
+</main>
+
+<!--#include footer-->
+</body>
+</html>

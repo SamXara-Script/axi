@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>
+    // before first paint: JS flag, saved theme, and whether this is a page-to-page visit
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var theme = JSON.parse(localStorage.getItem('axis:theme'));
+        if (theme) d.setAttribute('data-theme', theme);
+        if (sessionStorage.getItem('axis:visited')) d.classList.add('is-returning');
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>The Towers — architecture of Axis Towers</title>
+  <meta name="i18n-title" content="meta.about.title">
+  <meta name="description" content="How Axis Towers was built: two 147 m towers turning two degrees per floor in opposite directions, around a central core and twelve pylons.">
+</head>
+<body data-page="about">
+  <a class="skip-link" href="#main" data-i18n="chrome.skip">Skip to content</a>
+  <div class="guides" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html" data-i18n-attr="aria-label:chrome.homeLabel" aria-label="Axis Towers — home">
+        <svg class="logo__mark" viewBox="0 0 44 44" aria-hidden="true"><path d="M8.5 41C10.5 28 12.5 15 11 3h7.5c1.1 12 .1 25-2 38z" fill="currentColor"/><path d="M35.5 41c-2-13-4-26-2.5-38h-7.5c-1.1 12-.1 25 2 38z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M22 0v44" stroke="var(--accent)" stroke-width="1"/></svg>
+        <span class="logo__word"><b>AXIS</b><span>TOWERS</span></span>
+      </a>
+      <nav class="nav" data-i18n-attr="aria-label:chrome.primaryNav" aria-label="Primary">
+        <a href="residences.html" data-i18n="nav.residences">Residences</a>
+        <a href="offices.html" data-i18n="nav.offices">Business Center</a>
+        <a href="hotel.html" data-i18n="nav.hotel">Hotel & Sky Bar</a>
+        <a href="lifestyle.html" data-i18n="nav.lifestyle">Lifestyle</a>
+        <a href="about.html" data-i18n="nav.about">The Towers</a>
+        <a href="news.html" data-i18n="nav.news">News</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="header__tools">
+        <div class="clock" data-clock aria-hidden="true"></div>
+        <div class="lang-switch" role="group" data-i18n-attr="aria-label:chrome.language" aria-label="Language">
+          <button type="button" data-lang="ka" lang="ka" aria-pressed="false">ქარ</button>
+          <button type="button" data-lang="en" lang="en" aria-pressed="true">Eng</button>
+          <button type="button" data-lang="ru" lang="ru" aria-pressed="false">Рус</button>
+        </div>
+        <button class="search-trigger" type="button" data-palette data-i18n-attr="aria-label:chrome.search" aria-label="Search">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>
+          <span data-i18n="chrome.search">Search</span><kbd>⌘K</kbd>
+        </button>
+        <button class="btn btn--primary btn--sm btn-book" type="button" data-book data-magnetic="0.25" data-i18n="chrome.book">Book a viewing</button>
+        <button class="burger" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu" data-i18n-attr="aria-label:chrome.menu" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" id="menu">
+    <nav class="menu__links" data-i18n-attr="aria-label:chrome.menu" aria-label="Menu">
+      <a href="index.html" data-preview="00"><small>00</small><span data-i18n="nav.home">Home</span></a>
+      <a href="residences.html" data-preview="04–37"><small>04</small><span data-i18n="nav.residences">Residences</span></a>
+      <a href="offices.html" data-preview="04–18"><small>12</small><span data-i18n="nav.offices">Business Center</span></a>
+      <a href="hotel.html" data-preview="19–37"><small>19</small><span data-i18n="nav.hotel">Hotel & Sky Bar</span></a>
+      <a href="lifestyle.html" data-preview="−1"><small>−1</small><span data-i18n="nav.lifestyle">Lifestyle</span></a>
+      <a href="about.html" data-preview="147"><small>147</small><span data-i18n="nav.about">The Towers</span></a>
+      <a href="news.html" data-preview="2026"><small>NEWS</small><span data-i18n="nav.news">News</span></a>
+      <a href="contact.html" data-preview="37M"><small>37M</small><span data-i18n="nav.contact">Contact</span></a>
+    </nav>
+    <aside class="menu__aside">
+      <div class="menu__preview" aria-hidden="true"><span data-menu-preview>00</span></div>
+      <div class="menu__contact">
+        <p class="label" data-i18n="footer.visit">Visit</p>
+        <p data-i18n="contact.addressLine">37m Ilia Chavchavadze Ave, Tbilisi 0179</p>
+        <a href="tel:+995322371717">+995 32 237 17 17</a>
+        <a href="mailto:info@axistowers.ge">info@axistowers.ge</a>
+      </div>
+      <div class="row">
+        <div class="lang-switch" role="group" data-i18n-attr="aria-label:chrome.language" aria-label="Language">
+          <button type="button" data-lang="ka" lang="ka" aria-pressed="false">ქართული</button>
+          <button type="button" data-lang="en" lang="en" aria-pressed="true">English</button>
+          <button type="button" data-lang="ru" lang="ru" aria-pressed="false">Русский</button>
+        </div>
+        <button class="btn btn--primary btn--sm" type="button" data-book data-i18n="chrome.book">Book a viewing</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__half preloader__half--l"></div>
+    <div class="preloader__half preloader__half--r"></div>
+    <div class="preloader__axis"></div>
+    <div class="preloader__content">
+      <div class="preloader__word"><span>A</span><span>X</span><span>I</span><span>S</span></div>
+    </div>
+    <div class="preloader__meta">
+      <span>41.7118° N<br>44.7568° E</span>
+      <span class="preloader__floor"><small>FL</small><b>B4</b></span>
+      <span>147 M<br>TBILISI</span>
+    </div>
+  </div>
+  <div class="curtain" aria-hidden="true"><div class="curtain__label">Axis Towers</div></div>
+  <div class="float-tip" aria-hidden="true"></div>
+
+
+<main id="main">
+  <section class="page-hero" id="top" data-floor="01" data-floor-label="floors.overview">
+    <div class="container page-hero__grid">
+      <div class="page-hero__text">
+        <p class="eyebrow" data-i18n="about.eyebrow">The Towers</p>
+        <h1 class="display page-hero__display" data-reveal="lines" data-i18n="about.title">Engineering <em>a twist</em></h1>
+        <p class="lead" data-reveal="fade" data-i18n="about.lead">Axis Towers began with a group of architects and an idea that seemed impossible: two towers, one of stone and one of glass, turning around their own axes in opposite directions.</p>
+        <dl class="page-hero__meta" data-reveal="stagger">
+          <div><dt data-i18n="about.m1">Height</dt><dd>147 <span data-i18n="units.m">m</span></dd></div>
+          <div><dt data-i18n="about.m2">Floors</dt><dd>37 + 4</dd></div>
+          <div><dt data-i18n="about.m3">Rotation per floor</dt><dd>2°</dd></div>
+          <div><dt data-i18n="about.m4">Pylons per tower</dt><dd>12</dd></div>
+        </dl>
+      </div>
+      <div class="page-hero__art" aria-hidden="true"><svg data-drawing="both"></svg></div>
+    </div>
+  </section>
+
+  <section class="section" id="story" data-floor="02" data-floor-label="floors.story">
+    <div class="container split">
+      <div class="split__lead">
+        <p class="eyebrow" data-i18n="about.storyEyebrow">Our story</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="about.storyTitle">A seemingly <em>impossible</em> project</h2>
+      </div>
+      <div class="split__body prose">
+        <p class="lead" data-i18n="about.story1">The project started when a group of architects imagined a large-scale building that Tbilisi had never seen. Today Axis Towers is a flagship of Georgian architecture and engineering, and the tallest building in the capital.</p>
+        <p data-i18n="about.story2">Its two towers combine five worlds — a Class A business center, the five-star Pullman hotel, residences, a shopping center and places to eat, drink and unwind.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="architecture" data-floor="03" data-floor-label="floors.architecture">
+    <div class="container twist">
+      <div class="twist__text stack" style="--stack:24px">
+        <p class="eyebrow" data-i18n="about.archEyebrow">Architecture</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="about.archTitle">Two degrees <em>per floor</em></h2>
+        <p class="lead" data-i18n="about.archLead">Each floor turns two degrees around the core relative to the one below — clockwise in one tower, counter-clockwise in the other — so the pair spiral away from each other as they rise.</p>
+        <div class="twist__notes">
+          <div><h3 class="h4" data-i18n="about.a1t">Stone and glass</h3><p class="muted" data-i18n="about.a1">One tower is clad in white stone and holds the residences; the other is wrapped in dark glass and holds the business center and the hotel.</p></div>
+          <div><h3 class="h4" data-i18n="about.a2t">A spiral, floor by floor</h3><p class="muted" data-i18n="about.a2">Drag the model to watch the floor plates turn, two degrees at a time.</p></div>
+        </div>
+      </div>
+      <div class="twist__demo" data-twist-demo>
+        <svg data-drawing="both" data-static></svg>
+        <div class="range twist__range">
+          <div class="range__head"><label class="label" for="twist-range" data-i18n="about.m3">Rotation per floor</label><span class="range__value" data-twist-out>2.0°</span></div>
+          <input id="twist-range" type="range" min="0" max="4" step="0.1" value="2">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="structure" data-floor="04" data-floor-label="floors.structure">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="about.structEyebrow">Structure</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="about.structTitle">A core, <em>twelve pylons</em> and one foundation</h2>
+        </div>
+      </div>
+      <div class="feature-cards" data-reveal="stagger">
+        <article class="feature-card"><span class="feature-card__num">1</span><h3 class="h4" data-i18n="about.st1t">Central core</h3><p class="muted" data-i18n="about.st1">Each tower is organised around a central core — the axis the floors rotate around.</p></article>
+        <article class="feature-card"><span class="feature-card__num">12</span><h3 class="h4" data-i18n="about.st2t">Twelve pylons</h3><p class="muted" data-i18n="about.st2">Twelve massive pylons ring each core and carry the turning floor plates.</p></article>
+        <article class="feature-card"><span class="feature-card__num">2→1</span><h3 class="h4" data-i18n="about.st3t">Shared foundation</h3><p class="muted" data-i18n="about.st3">Both towers stand on the same solid foundation, chosen for the site’s soils and rock.</p></article>
+        <article class="feature-card"><span class="feature-card__num">≈</span><h3 class="h4" data-i18n="about.st4t">Built for seismic loads</h3><p class="muted" data-i18n="about.st4">Georgia has medium seismic activity; the structure was designed with that in mind.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="people" data-floor="05" data-floor-label="floors.people">
+    <div class="container split">
+      <div class="split__lead">
+        <p class="eyebrow" data-i18n="about.peopleEyebrow">People</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="about.peopleTitle">The <em>architects</em></h2>
+        <p class="muted" data-i18n="about.peopleLead">Axis Towers was designed by a Georgian team of architects.</p>
+      </div>
+      <div class="split__body">
+        <ul class="people" data-reveal="stagger">
+          <li>Alexander Mezhevidze</li>
+          <li>Gega Astakhishvili</li>
+          <li>Nino Mosulishvili</li>
+          <li>Nikoloz Kilasonia</li>
+        </ul>
+        <div class="people__more">
+          <div><h3 class="label" data-i18n="about.devTitle">Developer</h3><p data-i18n="about.dev">Developed by the Georgian construction company AXIS together with the Georgian Co-Investment Fund.</p></div>
+          <div><h3 class="label" data-i18n="about.partnersTitle">Selected partners</h3><p data-i18n="about.partners">Reynaers Aluminium facade systems · Saint-Gobain glass · Caleffi hydronic systems</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="timeline" data-floor="06" data-floor-label="floors.timeline">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="about.timelineEyebrow">Timeline</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="about.timelineTitle">Milestones</h2>
+        </div>
+      </div>
+      <ol class="timeline" data-reveal="stagger">
+        <li><span class="timeline__year">2019</span><p data-i18n="about.y2019">The two 147 m towers are completed — the tallest buildings in Tbilisi.</p></li>
+        <li><span class="timeline__year">2020</span><p data-i18n="about.y2020">Axis Towers becomes the first building in the region with World Trade Center status.</p></li>
+        <li><span class="timeline__year">2022</span><p data-i18n="about.y2022">Pullman Tbilisi Axis Towers opens — the first premium Accor hotel in Georgia.</p></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__cta">
+        <p class="eyebrow" data-i18n="footer.eyebrow">Visit Axis Towers</p>
+        <h2 class="display" data-reveal="lines" data-i18n="footer.title">Your address on the <em>Tbilisi skyline</em></h2>
+        <div class="row" style="--gap:14px">
+          <button class="btn btn--primary btn--lg" type="button" data-book data-magnetic="0.2"><span data-i18n="chrome.book">Book a viewing</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button>
+          <a class="btn btn--lg" href="tel:+995322371717" data-magnetic="0.2">+995 32 237 17 17</a>
+        </div>
+      </div>
+
+      <div class="footer__grid">
+        <div>
+          <h3 class="label" data-i18n="footer.visit">Visit</h3>
+          <p data-i18n="contact.addressLine">37m Ilia Chavchavadze Ave, Tbilisi 0179</p>
+          <p class="small faint" style="margin-top:10px" data-i18n="footer.district">Vake, Tbilisi, Georgia</p>
+        </div>
+        <div>
+          <h3 class="label" data-i18n="footer.contact">Contact</h3>
+          <ul>
+            <li><a href="tel:+995322371717">+995 32 237 17 17</a></li>
+            <li><a href="tel:*1717">*1717</a></li>
+            <li><a href="mailto:info@axistowers.ge">info@axistowers.ge</a></li>
+            <li><a href="mailto:sales@axistowers.ge">sales@axistowers.ge</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="label" data-i18n="footer.explore">Explore</h3>
+          <ul>
+            <li><a href="residences.html" data-i18n="nav.residences">Residences</a></li>
+            <li><a href="offices.html" data-i18n="nav.offices">Business Center</a></li>
+            <li><a href="hotel.html" data-i18n="nav.hotel">Hotel & Sky Bar</a></li>
+            <li><a href="lifestyle.html" data-i18n="nav.lifestyle">Lifestyle</a></li>
+            <li><a href="about.html" data-i18n="nav.about">The Towers</a></li>
+            <li><a href="news.html" data-i18n="nav.news">News</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="label" data-i18n="footer.tools">Tools</h3>
+          <ul>
+            <li><a href="index.html#explore" data-i18n="footer.tool3d">3D explorer</a></li>
+            <li><a href="residences.html#finder" data-i18n="footer.toolFinder">Apartment finder</a></li>
+            <li><a href="residences.html#calculator" data-i18n="footer.toolCalc">Payment calculator</a></li>
+            <li><a href="index.html#view" data-i18n="footer.toolView">View from your floor</a></li>
+            <li><button type="button" class="link-plain" data-palette data-i18n="footer.toolSearch">Search (⌘K)</button></li>
+            <li><button type="button" class="link-plain" data-settings data-i18n="footer.toolSettings">Language & currency</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__word" aria-hidden="true">AXIS</div>
+    <div class="container footer__bottom">
+      <span data-i18n="footer.copyright">© 2026 Axis Towers. All rights reserved.</span>
+      <span data-i18n="footer.wtc">World Trade Center Tbilisi</span>
+      <a href="#top" data-i18n="footer.top">Back to the lobby ↑</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>

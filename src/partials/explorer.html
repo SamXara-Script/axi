@@ -1,0 +1,71 @@
+  <!-- Full-screen 3D explorer: the hero canvas moves in here -->
+  <div class="explorer" data-explorer hidden role="dialog" aria-modal="true" aria-labelledby="explorer-title">
+    <div class="explorer__stage"></div>
+
+    <div class="explorer__top">
+      <div>
+        <p class="eyebrow" data-i18n="explorer.eyebrow">{{t:explorer.eyebrow}}</p>
+        <h2 class="h3" id="explorer-title" data-i18n="explorer.title">{{t:explorer.title}}</h2>
+      </div>
+      <div class="row" style="--gap:8px">
+        <div class="segmented" role="group" data-i18n-attr="aria-label:explorer.view" aria-label="{{t:explorer.view}}">
+          <button type="button" data-explorer-mode="real" aria-pressed="true" data-i18n="explorer.real">{{t:explorer.real}}</button>
+          <button type="button" data-explorer-mode="functions" aria-pressed="false" data-i18n="explorer.uses">{{t:explorer.uses}}</button>
+        </div>
+        <button class="icon-btn" type="button" data-explorer-close data-i18n-attr="aria-label:common.close" aria-label="{{t:common.close}}">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="explorer__legend" data-explorer-legend hidden>
+      <span style="--dot:var(--z-residential)" data-i18n="zones.residential">{{t:zones.residential}}</span>
+      <span style="--dot:var(--z-office)" data-i18n="zones.office">{{t:zones.office}}</span>
+      <span style="--dot:var(--z-hotel)" data-i18n="zones.hotel">{{t:zones.hotel}}</span>
+      <span style="--dot:var(--z-dining)" data-i18n="zones.dining">{{t:zones.dining}}</span>
+      <span style="--dot:var(--z-retail)" data-i18n="zones.retail">{{t:zones.retail}}</span>
+    </div>
+
+    <div class="explorer__side">
+      <div class="compass" data-compass aria-hidden="true"><span>N</span><i></i></div>
+      <div class="explorer__focus" role="group" data-i18n-attr="aria-label:explorer.focus" aria-label="{{t:explorer.focus}}">
+        <button type="button" class="chip" data-explorer-focus="stone" data-i18n="towers.stone.short">{{t:towers.stone.short}}</button>
+        <button type="button" class="chip" data-explorer-focus="" data-i18n="explorer.both">{{t:explorer.both}}</button>
+        <button type="button" class="chip" data-explorer-focus="glass" data-i18n="towers.glass.short">{{t:towers.glass.short}}</button>
+      </div>
+    </div>
+
+    <div class="floor-card" data-floor-card hidden aria-live="polite"></div>
+
+    <div class="explorer__panel">
+      <div class="explorer__readout">
+        <div><span class="label" data-i18n="explorer.time">{{t:explorer.time}}</span><b data-out="time">--:--</b></div>
+        <div><span class="label" data-i18n="explorer.date">{{t:explorer.date}}</span><b data-out="date">—</b></div>
+        <div><span class="label" data-i18n="explorer.sunrise">{{t:explorer.sunrise}}</span><b data-out="sunrise">—</b></div>
+        <div><span class="label" data-i18n="explorer.sunset">{{t:explorer.sunset}}</span><b data-out="sunset">—</b></div>
+        <div><span class="label" data-i18n="explorer.daylight">{{t:explorer.daylight}}</span><b data-out="daylight">—</b></div>
+        <div><span class="label" data-i18n="explorer.altitude">{{t:explorer.altitude}}</span><b data-out="altitude">—</b></div>
+      </div>
+      <div class="explorer__sliders">
+        <button class="icon-btn" type="button" data-explorer-play data-i18n-attr="aria-label:explorer.play" aria-label="{{t:explorer.play}}">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.5 2.8v10.4L13 8z"/></svg>
+        </button>
+        <div class="range">
+          <label class="label" for="explorer-time" data-i18n="explorer.time">{{t:explorer.time}}</label>
+          <input id="explorer-time" type="range" min="0" max="1435" step="5" value="720" data-explorer-time>
+        </div>
+        <div class="range">
+          <label class="label" for="explorer-day" data-i18n="explorer.season">{{t:explorer.season}}</label>
+          <input id="explorer-day" type="range" min="1" max="365" step="1" value="172" data-explorer-day>
+        </div>
+        <div class="explorer__seasons">
+          <button type="button" class="chip" data-explorer-season="80" data-i18n="explorer.spring">{{t:explorer.spring}}</button>
+          <button type="button" class="chip" data-explorer-season="172" data-i18n="explorer.summer">{{t:explorer.summer}}</button>
+          <button type="button" class="chip" data-explorer-season="266" data-i18n="explorer.autumn">{{t:explorer.autumn}}</button>
+          <button type="button" class="chip" data-explorer-season="355" data-i18n="explorer.winter">{{t:explorer.winter}}</button>
+          <button type="button" class="chip" data-explorer-now data-i18n="explorer.now">{{t:explorer.now}}</button>
+        </div>
+      </div>
+      <p class="small faint explorer__hint" data-i18n="explorer.hint">{{t:explorer.hint}}</p>
+    </div>
+  </div>

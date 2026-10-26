@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>
+    // before first paint: JS flag, saved theme, and whether this is a page-to-page visit
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var theme = JSON.parse(localStorage.getItem('axis:theme'));
+        if (theme) d.setAttribute('data-theme', theme);
+        if (sessionStorage.getItem('axis:visited')) d.classList.add('is-returning');
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>Pullman Tbilisi Axis Towers, Dumas & Weather Report</title>
+  <meta name="i18n-title" content="meta.hotel.title">
+  <meta name="description" content="The 218-room Pullman hotel on floors 19–35, Dumas French restaurant on 36 and Weather Report, the highest bar in Tbilisi, on 37.">
+</head>
+<body data-page="hotel">
+  <a class="skip-link" href="#main" data-i18n="chrome.skip">Skip to content</a>
+  <div class="guides" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html" data-i18n-attr="aria-label:chrome.homeLabel" aria-label="Axis Towers — home">
+        <svg class="logo__mark" viewBox="0 0 44 44" aria-hidden="true"><path d="M8.5 41C10.5 28 12.5 15 11 3h7.5c1.1 12 .1 25-2 38z" fill="currentColor"/><path d="M35.5 41c-2-13-4-26-2.5-38h-7.5c-1.1 12-.1 25 2 38z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M22 0v44" stroke="var(--accent)" stroke-width="1"/></svg>
+        <span class="logo__word"><b>AXIS</b><span>TOWERS</span></span>
+      </a>
+      <nav class="nav" data-i18n-attr="aria-label:chrome.primaryNav" aria-label="Primary">
+        <a href="residences.html" data-i18n="nav.residences">Residences</a>
+        <a href="offices.html" data-i18n="nav.offices">Business Center</a>
+        <a href="hotel.html" data-i18n="nav.hotel">Hotel & Sky Bar</a>
+        <a href="lifestyle.html" data-i18n="nav.lifestyle">Lifestyle</a>
+        <a href="about.html" data-i18n="nav.about">The Towers</a>
+        <a href="news.html" data-i18n="nav.news">News</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="header__tools">
+        <div class="clock" data-clock aria-hidden="true"></div>
+        <div class="lang-switch" role="group" data-i18n-attr="aria-label:chrome.language" aria-label="Language">
+          <button type="button" data-lang="ka" lang="ka" aria-pressed="false">ქარ</button>
+          <button type="button" data-lang="en" lang="en" aria-pressed="true">Eng</button>
+          <button type="button" data-lang="ru" lang="ru" aria-pressed="false">Рус</button>
+        </div>
+        <button class="search-trigger" type="button" data-palette data-i18n-attr="aria-label:chrome.search" aria-label="Search">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>
+          <span data-i18n="chrome.search">Search</span><kbd>⌘K</kbd>
+        </button>
+        <button class="btn btn--primary btn--sm btn-book" type="button" data-book data-magnetic="0.25" data-i18n="chrome.book">Book a viewing</button>
+        <button class="burger" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu" data-i18n-attr="aria-label:chrome.menu" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" id="menu">
+    <nav class="menu__links" data-i18n-attr="aria-label:chrome.menu" aria-label="Menu">
+      <a href="index.html" data-preview="00"><small>00</small><span data-i18n="nav.home">Home</span></a>
+      <a href="residences.html" data-preview="04–37"><small>04</small><span data-i18n="nav.residences">Residences</span></a>
+      <a href="offices.html" data-preview="04–18"><small>12</small><span data-i18n="nav.offices">Business Center</span></a>
+      <a href="hotel.html" data-preview="19–37"><small>19</small><span data-i18n="nav.hotel">Hotel & Sky Bar</span></a>
+      <a href="lifestyle.html" data-preview="−1"><small>−1</small><span data-i18n="nav.lifestyle">Lifestyle</span></a>
+      <a href="about.html" data-preview="147"><small>147</small><span data-i18n="nav.about">The Towers</span></a>
+      <a href="news.html" data-preview="2026"><small>NEWS</small><span data-i18n="nav.news">News</span></a>
+      <a href="contact.html" data-preview="37M"><small>37M</small><span data-i18n="nav.contact">Contact</span></a>
+    </nav>
+    <aside class="menu__aside">
+      <div class="menu__preview" aria-hidden="true"><span data-menu-preview>00</span></div>
+      <div class="menu__contact">
+        <p class="label" data-i18n="footer.visit">Visit</p>
+        <p data-i18n="contact.addressLine">37m Ilia Chavchavadze Ave, Tbilisi 0179</p>
+        <a href="tel:+995322371717">+995 32 237 17 17</a>
+        <a href="mailto:info@axistowers.ge">info@axistowers.ge</a>
+      </div>
+      <div class="row">
+        <div class="lang-switch" role="group" data-i18n-attr="aria-label:chrome.language" aria-label="Language">
+          <button type="button" data-lang="ka" lang="ka" aria-pressed="false">ქართული</button>
+          <button type="button" data-lang="en" lang="en" aria-pressed="true">English</button>
+          <button type="button" data-lang="ru" lang="ru" aria-pressed="false">Русский</button>
+        </div>
+        <button class="btn btn--primary btn--sm" type="button" data-book data-i18n="chrome.book">Book a viewing</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__half preloader__half--l"></div>
+    <div class="preloader__half preloader__half--r"></div>
+    <div class="preloader__axis"></div>
+    <div class="preloader__content">
+      <div class="preloader__word"><span>A</span><span>X</span><span>I</span><span>S</span></div>
+    </div>
+    <div class="preloader__meta">
+      <span>41.7118° N<br>44.7568° E</span>
+      <span class="preloader__floor"><small>FL</small><b>B4</b></span>
+      <span>147 M<br>TBILISI</span>
+    </div>
+  </div>
+  <div class="curtain" aria-hidden="true"><div class="curtain__label">Axis Towers</div></div>
+  <div class="float-tip" aria-hidden="true"></div>
+
+
+<main id="main">
+  <section class="page-hero page-hero--night" id="top" data-floor="01" data-floor-label="floors.overview">
+    <div class="container page-hero__grid">
+      <div class="page-hero__text">
+        <p class="eyebrow" data-i18n="hotel.eyebrow">Floors 19–37 · Glass Tower</p>
+        <h1 class="h1" data-reveal="lines" data-i18n="hotel.title">Pullman Tbilisi <em>Axis Towers</em></h1>
+        <p class="lead" data-reveal="fade" data-i18n="hotel.lead">The first premium Accor hotel in Georgia: 218 rooms and suites on floors 19 to 35, Dumas on the 36th floor and Weather Report — the highest bar in Tbilisi — on the 37th.</p>
+        <div class="row" data-reveal="fade" style="--gap:12px">
+          <a class="btn btn--primary" href="https://pullmantbilisi.com/" target="_blank" rel="noopener"><span data-i18n="hotel.bookStay">Book a stay</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 3h8v8M13 3L3 13"/></svg></a>
+          <a class="btn" href="#dining" data-i18n="explorer.ctaDining">Restaurant & sky bar</a>
+        </div>
+        <dl class="page-hero__meta" data-reveal="stagger">
+          <div><dt data-i18n="hotel.m1">Rooms & suites</dt><dd>218</dd></div>
+          <div><dt data-i18n="hotel.m2">Hotel floors</dt><dd>19–35</dd></div>
+          <div><dt data-i18n="hotel.m3">Restaurant</dt><dd>36</dd></div>
+          <div><dt data-i18n="hotel.m4">Sky bar</dt><dd>37</dd></div>
+        </dl>
+      </div>
+      <div class="page-hero__art" aria-hidden="true"><svg data-drawing="glass" data-highlight="hotel,dining"></svg></div>
+    </div>
+  </section>
+
+  <section class="section" id="rooms" data-floor="02" data-floor-label="floors.rooms">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="hotel.roomsEyebrow">Rooms & suites</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="hotel.roomsTitle">Four ways <em>to stay</em></h2>
+        </div>
+      </div>
+      <div class="room-cards" data-reveal="stagger">
+        <article class="room-card"><span class="room-card__n">I</span><h3 class="h3" data-i18n="hotel.r1">Superior</h3><p class="muted" data-i18n="hotel.r1d">Contemporary comfort with views over Tbilisi from the Glass Tower.</p></article>
+        <article class="room-card"><span class="room-card__n">II</span><h3 class="h3" data-i18n="hotel.r2">Executive</h3><p class="muted" data-i18n="hotel.r2d">For business travellers who want a little more room to work and rest.</p></article>
+        <article class="room-card"><span class="room-card__n">III</span><h3 class="h3" data-i18n="hotel.r3">Junior Suite</h3><p class="muted" data-i18n="hotel.r3d">A separate seating area — space to settle in on a longer stay.</p></article>
+        <article class="room-card"><span class="room-card__n">IV</span><h3 class="h3" data-i18n="hotel.r4">Superior Suite</h3><p class="muted" data-i18n="hotel.r4d">Generous suites, high above Vake.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="dining" data-floor="03" data-floor-label="floors.dining">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="hotel.diningEyebrow">Dining</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="hotel.diningTitle">Floors <em>36 & 37</em></h2>
+        </div>
+      </div>
+      <div class="venues">
+        <article class="venue venue--sky" data-reveal="fade">
+          <span class="venue__floor">37</span>
+          <div class="venue__body">
+            <p class="label" data-i18n="home.hotel.t37">Sky bar</p>
+            <h3 class="h2">Weather Report</h3>
+            <p class="lead" data-i18n="hotel.weatherLead">The highest bar in Tbilisi. Signature cocktails, sushi and tapas, with the city laid out below — and DJs at the weekend.</p>
+          </div>
+        </article>
+        <article class="venue" data-reveal="fade">
+          <span class="venue__floor">36</span>
+          <div class="venue__body">
+            <p class="label" data-i18n="home.hotel.t36">Restaurant</p>
+            <h3 class="h2">Dumas</h3>
+            <p class="lead" data-i18n="hotel.dumasLead">A French restaurant serving French and Mediterranean dishes, with a menu that changes through the day — breakfast, business lunch and dinner. Named after Alexandre Dumas, who travelled through Tbilisi in 1858.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="wellness" data-floor="04" data-floor-label="floors.wellness">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="hotel.wellEyebrow">Wellness</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="hotel.wellTitle">Spa, pool & <em>fitness</em></h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="hotel.wellLead">Individually tailored treatments for women and men, then the pool, sauna, steam room and gym.</p></div>
+      </div>
+      <div class="feature-cards" data-reveal="stagger">
+        <article class="feature-card feature-card--pool"><span class="feature-card__num">25 m</span><h3 class="h4" data-i18n="hotel.w1">25 × 9 m pool</h3><p class="muted" data-i18n="hotel.w1d">On the podium roof, under a retractable glass roof.</p></article>
+        <article class="feature-card"><span class="feature-card__num">SPA</span><h3 class="h4" data-i18n="hotel.w2">Spa</h3><p class="muted" data-i18n="hotel.w2d">Treatments tailored to each guest.</p></article>
+        <article class="feature-card"><span class="feature-card__num">°C</span><h3 class="h4" data-i18n="hotel.w3">Sauna & steam</h3><p class="muted" data-i18n="hotel.w3d">Heat and steam after a swim or a treatment.</p></article>
+        <article class="feature-card"><span class="feature-card__num">GYM</span><h3 class="h4" data-i18n="hotel.w4">Fitness hall</h3><p class="muted" data-i18n="hotel.w4d">A fully equipped gym in the building.</p></article>
+      </div>
+      <p class="small faint" style="margin-top:32px" data-i18n="hotel.note">Pullman Tbilisi Axis Towers is operated by Accor. Reservations are made on the hotel’s own website.</p>
+    </div>
+  </section>
+</main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__cta">
+        <p class="eyebrow" data-i18n="footer.eyebrow">Visit Axis Towers</p>
+        <h2 class="display" data-reveal="lines" data-i18n="footer.title">Your address on the <em>Tbilisi skyline</em></h2>
+        <div class="row" style="--gap:14px">
+          <button class="btn btn--primary btn--lg" type="button" data-book data-magnetic="0.2"><span data-i18n="chrome.book">Book a viewing</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button>
+          <a class="btn btn--lg" href="tel:+995322371717" data-magnetic="0.2">+995 32 237 17 17</a>
+        </div>
+      </div>
+
+      <div class="footer__grid">
+        <div>
+          <h3 class="label" data-i18n="footer.visit">Visit</h3>
+          <p data-i18n="contact.addressLine">37m Ilia Chavchavadze Ave, Tbilisi 0179</p>
+          <p class="small faint" style="margin-top:10px" data-i18n="footer.district">Vake, Tbilisi, Georgia</p>
+        </div>
+        <div>
+          <h3 class="label" data-i18n="footer.contact">Contact</h3>
+          <ul>
+            <li><a href="tel:+995322371717">+995 32 237 17 17</a></li>
+            <li><a href="tel:*1717">*1717</a></li>
+            <li><a href="mailto:info@axistowers.ge">info@axistowers.ge</a></li>
+            <li><a href="mailto:sales@axistowers.ge">sales@axistowers.ge</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="label" data-i18n="footer.explore">Explore</h3>
+          <ul>
+            <li><a href="residences.html" data-i18n="nav.residences">Residences</a></li>
+            <li><a href="offices.html" data-i18n="nav.offices">Business Center</a></li>
+            <li><a href="hotel.html" data-i18n="nav.hotel">Hotel & Sky Bar</a></li>
+            <li><a href="lifestyle.html" data-i18n="nav.lifestyle">Lifestyle</a></li>
+            <li><a href="about.html" data-i18n="nav.about">The Towers</a></li>
+            <li><a href="news.html" data-i18n="nav.news">News</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="label" data-i18n="footer.tools">Tools</h3>
+          <ul>
+            <li><a href="index.html#explore" data-i18n="footer.tool3d">3D explorer</a></li>
+            <li><a href="residences.html#finder" data-i18n="footer.toolFinder">Apartment finder</a></li>
+            <li><a href="residences.html#calculator" data-i18n="footer.toolCalc">Payment calculator</a></li>
+            <li><a href="index.html#view" data-i18n="footer.toolView">View from your floor</a></li>
+            <li><button type="button" class="link-plain" data-palette data-i18n="footer.toolSearch">Search (⌘K)</button></li>
+            <li><button type="button" class="link-plain" data-settings data-i18n="footer.toolSettings">Language & currency</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__word" aria-hidden="true">AXIS</div>
+    <div class="container footer__bottom">
+      <span data-i18n="footer.copyright">© 2026 Axis Towers. All rights reserved.</span>
+      <span data-i18n="footer.wtc">World Trade Center Tbilisi</span>
+      <a href="#top" data-i18n="footer.top">Back to the lobby ↑</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--#include head-->
+  <title>{{t:meta.lifestyle.title}}</title>
+  <meta name="i18n-title" content="meta.lifestyle.title">
+  <meta name="description" content="{{t:meta.lifestyle.description}}">
+</head>
+<body data-page="{{page}}">
+<!--#include header-->
+
+<main id="main">
+  <section class="page-hero" id="top" data-floor="01" data-floor-label="floors.overview">
+    <div class="container">
+      <p class="eyebrow" data-i18n="lifestyle.eyebrow">{{t:lifestyle.eyebrow}}</p>
+      <h1 class="display page-hero__display" data-reveal="lines" data-i18n="lifestyle.title">{{t:lifestyle.title}}</h1>
+      <p class="lead page-hero__lead" data-reveal="fade" data-i18n="lifestyle.lead">{{t:lifestyle.lead}}</p>
+      <nav class="jump" aria-label="On this page" data-reveal="stagger">
+        <a href="#falestra"><small>G</small>Falestra</a>
+        <a href="#shopping"><small>−1</small><span data-i18n="home.life.shopTitle">{{t:home.life.shopTitle}}</span></a>
+        <a href="#wellness"><small>SPA</small><span data-i18n="home.life.spaTitle">{{t:home.life.spaTitle}}</span></a>
+        <a href="#events"><small>EV</small><span data-i18n="lifestyle.eventsEyebrow">{{t:lifestyle.eventsEyebrow}}</span></a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section" id="falestra" data-floor="02" data-floor-label="floors.falestra">
+    <div class="container split">
+      <div class="split__lead">
+        <p class="eyebrow" data-i18n="lifestyle.falestraEyebrow">{{t:lifestyle.falestraEyebrow}}</p>
+        <h2 class="display" data-reveal="lines" data-i18n="lifestyle.falestraTitle">{{t:lifestyle.falestraTitle}}</h2>
+      </div>
+      <div class="split__body stack" style="--stack:28px">
+        <p class="lead" data-i18n="lifestyle.falestraLead">{{t:lifestyle.falestraLead}}</p>
+        <p class="label" data-i18n="lifestyle.tenants">{{t:lifestyle.tenants}}</p>
+        <ul class="tenant-list" data-reveal="stagger">
+          <li><span data-i18n="lifestyle.t1">{{t:lifestyle.t1}}</span><i aria-hidden="true">01</i></li>
+          <li><span data-i18n="lifestyle.t2">{{t:lifestyle.t2}}</span><i aria-hidden="true">02</i></li>
+          <li><span data-i18n="lifestyle.t3">{{t:lifestyle.t3}}</span><i aria-hidden="true">03</i></li>
+          <li><span data-i18n="lifestyle.t4">{{t:lifestyle.t4}}</span><i aria-hidden="true">04</i></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="shopping" data-floor="03" data-floor-label="floors.shopping">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="lifestyle.shopEyebrow">{{t:lifestyle.shopEyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="lifestyle.shopTitle">{{t:lifestyle.shopTitle}}</h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="lifestyle.shopLead">{{t:lifestyle.shopLead}}</p></div>
+      </div>
+      <div class="shop-grid" data-reveal="stagger">
+        <div class="shop-cell" data-i18n="lifestyle.s1">{{t:lifestyle.s1}}</div>
+        <div class="shop-cell" data-i18n="lifestyle.s2">{{t:lifestyle.s2}}</div>
+        <div class="shop-cell" data-i18n="lifestyle.s3">{{t:lifestyle.s3}}</div>
+        <div class="shop-cell" data-i18n="lifestyle.s4">{{t:lifestyle.s4}}</div>
+        <div class="shop-cell" data-i18n="lifestyle.s5">{{t:lifestyle.s5}}</div>
+        <div class="shop-cell" data-i18n="lifestyle.s6">{{t:lifestyle.s6}}</div>
+      </div>
+      <div class="shop-notes">
+        <p class="shop-note"><b>24/7</b><span data-i18n="lifestyle.hub">{{t:lifestyle.hub}}</span></p>
+        <p class="shop-note"><b>10–22</b><span data-i18n="lifestyle.cafes">{{t:lifestyle.cafes}}</span></p>
+        <a class="shop-note shop-note--circle" href="https://axistowers.ge/en/discover-the-circle" target="_blank" rel="noopener">
+          <span class="circle-mark" aria-hidden="true"></span>
+          <span><b data-i18n="lifestyle.circle">{{t:lifestyle.circle}}</b><span data-i18n="lifestyle.circleLead">{{t:lifestyle.circleLead}}</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="wellness" data-floor="04" data-floor-label="floors.wellness">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow" data-i18n="lifestyle.wellEyebrow">{{t:lifestyle.wellEyebrow}}</p>
+          <h2 class="h1" data-reveal="lines" data-i18n="lifestyle.wellTitle">{{t:lifestyle.wellTitle}}</h2>
+        </div>
+        <div class="section-head__aside"><p class="lead" data-i18n="hotel.wellLead">{{t:hotel.wellLead}}</p></div>
+      </div>
+      <div class="feature-cards" data-reveal="stagger">
+        <article class="feature-card feature-card--pool"><span class="feature-card__num">25 m</span><h3 class="h4" data-i18n="hotel.w1">{{t:hotel.w1}}</h3><p class="muted" data-i18n="hotel.w1d">{{t:hotel.w1d}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">SPA</span><h3 class="h4" data-i18n="hotel.w2">{{t:hotel.w2}}</h3><p class="muted" data-i18n="hotel.w2d">{{t:hotel.w2d}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">°C</span><h3 class="h4" data-i18n="hotel.w3">{{t:hotel.w3}}</h3><p class="muted" data-i18n="hotel.w3d">{{t:hotel.w3d}}</p></article>
+        <article class="feature-card"><span class="feature-card__num">GYM</span><h3 class="h4" data-i18n="hotel.w4">{{t:hotel.w4}}</h3><p class="muted" data-i18n="hotel.w4d">{{t:hotel.w4d}}</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="events" data-floor="05" data-floor-label="floors.events">
+    <div class="container sunband__grid">
+      <div>
+        <p class="eyebrow" data-i18n="lifestyle.eventsEyebrow">{{t:lifestyle.eventsEyebrow}}</p>
+        <h2 class="h1" data-reveal="lines" data-i18n="lifestyle.eventsTitle">{{t:lifestyle.eventsTitle}}</h2>
+      </div>
+      <div class="stack" style="--stack:26px">
+        <p class="lead" data-i18n="lifestyle.eventsLead">{{t:lifestyle.eventsLead}}</p>
+        <button class="btn btn--primary" type="button" data-book="other" data-i18n="lifestyle.eventsCta">{{t:lifestyle.eventsCta}}</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--#include footer-->
+</body>
+</html>
